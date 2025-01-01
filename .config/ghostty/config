@@ -1,0 +1,38 @@
+font-family = AbudinCode
+font-style = Regular
+font-size = 13
+font-thicken = true
+
+adjust-underline-position = 40%
+adjust-underline-thickness = -60%
+
+cursor-style = block
+cursor-style-blink = false
+
+focus-follows-mouse = true
+
+shell-integration = zsh
+shell-integration-features = no-cursor
+
+keybind = alt+f=new_split:down
+keybind = alt+g=new_split:right
+keybind = alt+t=new_tab
+
+window-width = 80
+window-height = 45
+window-padding-x = 4
+
+confirm-close-surface = false
+clipboard-paste-protection = false
+unfocused-split-opacity = 1.0
+
+theme = catppuccin-mocha
+background = #333333
+foreground = #f4f4ff
+cursor-color = #ff0078
+
+selection-background = 1d3c3b
+selection-foreground = eeeeee
+
+palette = 4=#3D52E2
+palette = 12=#344CFF
