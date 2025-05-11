@@ -1,62 +1,39 @@
-@define-color clear rgba(0, 0, 0, 0.0);
-@define-color primary rgba(0, 0, 0, 0.75);
-
 window {
-    margin: 2px;
-    border: 2px solid;
-    border-color: #313244;
-    background-color: #1e1e2e;
-    border-radius: 10px;
-    font-family: monospace;
-    font-size: 14px;
+margin: 0px;
+border-radius: 50px;
+border: 1px solid #44496b;
+background-color: #222133;
+
 }
 
 #input {
-    padding: 2px;
-    margin: 4px;
-    margin-bottom: 8px;
-    border: none;
-    color: @foreground;
-    background-color: #313244;
-   	outline: none;
+margin: 5px;
+border: none;
+color: #b4bdfe;
+background-color: #222133;
 }
 
 #inner-box {
-    margin: 2px;
-    border: 0px solid;
-    background-color: @clear;
-    border-radius: 8px;
+margin: 5px;
+border: none;
+background-color: #222133;
 }
 
 #outer-box {
-    margin: 5px;
-    border: none;
-    border-radius: 8px;
-    background-color: @clear;
+margin: 5px;
+border: none;
+padding: 20px;
+background-color: #222133;
+border-radius: 50px;
 }
 
 #scroll {
-    margin: 0px;
-    border: none;
+margin: 0px;
+border: none;
 }
 
-#text:selected {
-    color: @foreground;
-    margin: 0px 0px;
-    border: none;
-    border-radius: 8px;
-}
-
-#entry {
-    margin: 0px 0px;
-    border: none;
-    border-radius: 0px;
-    background-color: transparent;
-}
-
-#entry:selected {
-    margin: 0px 0px;
-    border: none;
-    border-radius: 8px;
-    background-color: #585b70;
+#text {
+margin: 5px;
+border: none;
+color: #b4bdfe;
 }

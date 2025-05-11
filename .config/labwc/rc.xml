@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<!--
+  This is a very simple config file with many options missing. For a complete
+  set of options with comments, see docs/rc.xml.all
+-->
+
+<labwc_config>
+
+  <theme>
+    <name></name>
+    <cornerRadius>8</cornerRadius>
+    <font name="FreeMono" size="12" />
+  </theme>
+
+  <keyboard>
+    <default />
+    <keybind key="W-q">
+        <action name="Close" />
+    </keybind>
+    <keybind key="W-k"><action name="NextWindow" /></keybind>
+    <keybind key="W-j"><action name="PreviousWindow" /></keybind>
+    <!-- Use a different terminal emulator -->
+    <keybind key="W-Return">
+      <action name="Execute" command="ghostty" />
+    </keybind>
+    <keybind key="W-o">
+      <action name="Execute" command="zen-browser" />
+    </keybind>
+    <keybind key="W-d">
+      <action name="Execute" command="fuzzel" />
+    </keybind>
+    <!--
+      Remove a previously defined keybind
+      A shorter alternative is <keybind key="W-F4" />
+    -->
+    <keybind key="W-F4">
+      <action name="None" />
+    </keybind>
+  </keyboard>
+
+  <mouse>
+    <default />
+    <!-- Show a custom menu on desktop right click -->
+    <context name="Root">
+      <mousebind button="Right" action="Press">
+        <action name="ShowMenu" menu="some-custom-menu" />
+      </mousebind>
+    </context>
+  </mouse>
+  <desktops number="5" />
+  <keyboard>
+    <keybind key="W-z"><action name="GoToDesktop" to="1" /></keybind>
+    <keybind key="W-x"><action name="GoToDesktop" to="2" /></keybind>
+    <keybind key="W-c"><action name="GoToDesktop" to="3" /></keybind>
+    <keybind key="W-v"><action name="GoToDesktop" to="4" /></keybind>
+    <keybind key="W-b"><action name="GoToDesktop" to="5" /></keybind>
+  </keyboard>
+
+</labwc_config>

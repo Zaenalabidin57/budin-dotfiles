@@ -5,6 +5,7 @@ sudo udisksctl unmount -b /dev/sda1
 sudo udisksctl power-off -b /dev/sda
 #sudo reboot
 cliphist wipe
+clipcatctl clear
 # read -p"pilih sistem $'\n'1. reboot \n2. poweroff \n3. shutdown \n4. masuk ke sddm\n" biji
 echo ""
 echo ""
@@ -34,8 +35,8 @@ if [[ $biji == w ]]; then
 fi
 if [[ $biji == s ]]; then
 echo "shutting down in 5 seconds"
-mpv --screen=1 --fs --fs-screen=1 ~/.config/scripts/media/shutdown.mp4
 sudo shutdown -h now
+mpv --screen=1 --fs --fs-screen=1 ~/.config/scripts/media/shutdown.webm
 fi 
 if [[ $biji == 4 ]]; then
   sudo logout

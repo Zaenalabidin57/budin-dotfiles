@@ -1,0 +1,1 @@
+exec /usr/bin/swayidle -w timeout 601 'niri msg action power-off-monitors' timeout 600 'swaylock -f --image /home/shigure/Pictures/wollpeper/ulul.jpg' before-sleep 'swaylock -f --image /home/shigure/Pictures/wollpeper/ulul.jpg' timeout 1000 'systemctl hibernate'

@@ -5,7 +5,7 @@
 local M = {}
 
 M.ui = {
-  theme = "bearded-arc",
+  theme = "nightowl",
   transparency = true,
 
   view = {
@@ -29,13 +29,13 @@ M.ui = {
   telescope = { style = "borderless" },
 }
 M.base46 = {
-  theme = "bearded-arc",
+  theme = "nightowl",
   transparency = true,
   hl_override = {
     Comment = { italic = true, fg ="dark_purple"},
     ["@comment"] = { italic = true, fg ="dark_purple"},
   },
-  theme_toggle = {"bearded-arc", "tokyonight"},
+  theme_toggle = {"nightowl", "tokyonight"},
 }
 
 M.nvdash = {

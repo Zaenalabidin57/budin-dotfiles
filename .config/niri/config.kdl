@@ -6,10 +6,15 @@
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+hotkey-overlay {
+    skip-at-startup
+}
 
 environment {
     DISPLAY ":0"
+    NIRI_DISABLE_SYSTEM_MANAGER_NOTIFY "1"
 }
+
 input {
     keyboard {
         xkb {
@@ -18,9 +23,15 @@ input {
 
             // For example:
             // layout "us,ru"
-            // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+            //options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+            // setup kibot biasa
+            //options "caps:escape,altwin:swap_lalt_lwin"
             options "caps:escape"
+
         }
+            repeat-delay 200
+            repeat-rate 50
+            track-layout "global"
     }
 
     // Next sections include libinput settings.
@@ -33,8 +44,8 @@ input {
         natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
-        // scroll-method "two-finger"
-        // disabled-on-external-mouse
+         scroll-method "two-finger"
+         disabled-on-external-mouse
     }
 
     mouse {
@@ -80,10 +91,10 @@ output "HDMI-A-1" {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1366x768@60"
+    mode "1920x1080@60"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 1
+    scale 0.6
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
@@ -128,14 +139,14 @@ output "eDP-1" {
     // so to put another output directly adjacent to it on the right, set its x to 1920.
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
-    position x=1366 y=0
+    position x=0 y=0
 }
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 10
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -150,9 +161,9 @@ layout {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
         // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
         // The default preset widths are 1/3, 1/2 and 2/3 of the output.
-        proportion 0.33333
+        //proportion 0.33333
         proportion 0.5
-        proportion 0.66667
+        //proportion 0.66667
 
         // Fixed sets the width in logical pixels exactly.
         // fixed 1920
@@ -162,9 +173,9 @@ layout {
     // preset-window-heights { }
 
     // You can change the default width of the new windows.
-    default-column-width { proportion 0.5; }
+    //default-column-width { proportion 0.5; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
-    // default-column-width {}
+    default-column-width {}
 
     // By default focus ring and border are rendered as a solid background rectangle
     // behind windows. That is, they will show up through semitransparent windows.
@@ -191,7 +202,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+       // active-color "#7fc8ff"
 
         // Color of the ring on inactive monitors.
         inactive-color "#505050"
@@ -203,7 +214,7 @@ layout {
         // You can use any CSS linear-gradient tool on the web to set these up.
         // Changing the color space is also supported, check the wiki for more info.
         //
-        // active-gradient from="#80c8ff" to="#bbddff" angle=45
+        active-gradient from="#003c6c" to="#bbddff" angle=0
 
         // You can also color the gradient relative to the entire view
         // of the workspace, rather than relative to just the window itself.
@@ -219,11 +230,11 @@ layout {
         off
 
         width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
+        //active-color "#ffc87f"
+        //inactive-color "#505050"
 
-        // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+       //  active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
+       //  inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
@@ -245,14 +256,20 @@ layout {
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
 //
-//spawn-at-startup "swaybg" "-i" "/home/shigure/Pictures/wollpeper/plana.png"
-spawn-at-startup "waypaper" "--restore"
+//spawn-at-startup "swaybg" "-i" "/home/shigure/Pictures/wollpeper/niri.jpg"
+//spawn-at-startup "swaybg" "-c" "040613"
+//spawn-at-startup "waypaper" "--restore"
 spawn-at-startup "mako"
 spawn-at-startup "/usr/bin/kdeconnectd"
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-spawn-at-startup "waybar"
+spawn-at-startup "/usr/bin/kdeconnect-indicator"
+//spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+//spawn-at-startup "waybar"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-at-startup "xwayland-satellite"
+spawn-at-startup "24wollpeper.sh"
+
+spawn-at-startup "sh" "-c" "~/.config/niri/idle.sh"
+
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -264,6 +281,7 @@ prefer-no-csd
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
+//screenshot-path "~/Pictures/screenshot/Screenshot from %Y-%m-%d %H-%M-%S.png"
 screenshot-path "~/Pictures/screenshot/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 // You can also set this to null to disable saving screenshots to disk.
@@ -277,7 +295,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-     slowdown 2.0
+     slowdown 0.6
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -297,6 +315,10 @@ window-rule {
 window-rule {
   match app-id="org.kde.kdeconnect.handler"
 
+}
+window-rule {
+    match app-id="File Operation Progress"
+    open-floating true
 }
 
 // Example: block out two password managers from screen capture.
@@ -333,13 +355,16 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
+
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return { spawn "ghostty"; }
-    //Mod+D { spawn "fuzzel"; }
-    Mod+D { spawn "wofi" "--show" "drun"; }
+    //Mod+Return { spawn "st"; }
+    Mod+D { spawn "fuzzel"; }
+    Mod+W { spawn "rofi" "-modi" "emoji" "-show" "emoji"; }
+   // Mod+D { spawn "wofi" "--show" "drun"; }
     Mod+O { spawn "zen-browser"; }
     Mod+N { spawn "thunar"; }
-    Super+Alt+L { spawn "swaylock"; }
+    Super+Shift+P { spawn "swaylock" "-f" "--image" "/home/shigure/Pictures/wollpeper/ulul.jpg"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -421,11 +446,15 @@ binds {
     Mod+Page_Down      { focus-workspace-down; }
     Mod+Page_Up        { focus-workspace-up; }
     Mod+U              { focus-workspace-down; }
-    Mod+I              { focus-workspace-up; }
+    //Mod+I              { focus-workspace-up; }
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
     Mod+Ctrl+U         { move-column-to-workspace-down; }
     Mod+Ctrl+I         { move-column-to-workspace-up; }
+
+    // toggle windows floating
+    Mod+Shift+Space { toggle-window-floating;}
+    Mod+Space { switch-focus-between-floating-and-tiling;}
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
@@ -476,20 +505,34 @@ binds {
     //
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
-    Mod+Z { focus-workspace 1; }
-    Mod+X { focus-workspace 2; }
-    Mod+C { focus-workspace 3; }
-    Mod+V { focus-workspace 4; }
-    Mod+B { focus-workspace 5; }
+
+    // setup corne kibot 
+     Mod+Z { focus-workspace 1; }
+     Mod+X { focus-workspace 2; }
+     Mod+C { focus-workspace 3; }
+     Mod+V { focus-workspace 4; }
+     Mod+B { focus-workspace 5; }
+     Mod+Shift+Z { move-column-to-workspace 1; }
+     Mod+Shift+X { move-column-to-workspace 2; }
+     Mod+Shift+C { move-column-to-workspace 3; }
+     Mod+Shift+V { move-column-to-workspace 4; }
+     Mod+Shift+B { move-column-to-workspace 5; }
+
+    // setup kibot gayming
+   // Mod+1 { focus-workspace 1; }
+   // Mod+2 { focus-workspace 2; }
+   // Mod+3 { focus-workspace 3; }
+   // Mod+4 { focus-workspace 4; }
+   // Mod+5 { focus-workspace 5; }
     Mod+6 { focus-workspace 6; }
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
-    Mod+Shift+Z { move-column-to-workspace 1; }
-    Mod+Shift+X { move-column-to-workspace 2; }
-    Mod+Shift+C { move-column-to-workspace 3; }
-    Mod+Shift+V { move-column-to-workspace 4; }
-    Mod+Shift+B { move-column-to-workspace 5; }
+   // Mod+Shift+1 { move-column-to-workspace 1; }
+   // Mod+Shift+2 { move-column-to-workspace 2; }
+   // Mod+Shift+3 { move-column-to-workspace 3; }
+   // Mod+Shift+4 { move-column-to-workspace 4; }
+   // Mod+Shift+5 { move-column-to-workspace 5; }
     Mod+Ctrl+6 { move-column-to-workspace 6; }
     Mod+Ctrl+7 { move-column-to-workspace 7; }
     Mod+Ctrl+8 { move-column-to-workspace 8; }
@@ -515,7 +558,11 @@ binds {
     Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
-    Mod+S { center-column; }
+    Mod+Slash { center-column; }
+
+    // Mod+S { spawn "sh" "-c" "~/.config/niri/toggle_scratchpad.sh todo";}
+    Alt+Tab { spawn "sh" "-c" "~/.config/niri/niri_windows.sh";}
+    // Mod+Shift+S { spawn "sh" "-c" "~/.config/niri/send_to_scratchpad.sh todo";}
 
     // Finer width adjustments.
     // This command can also:
@@ -549,10 +596,14 @@ binds {
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { spawn "rio" "-e" "/home/shigure/exit.sh"; }
-    Mod+Y { spawn "cliphist" "list" "|" "wofi" "-S" "dmenu" "|" "cliphist" "decode" "|" "wl-copy"; }
+    // Mod+Y { spawn "cliphist" "list" "|" "wofi" "-S" "dmenu" "|" "cliphist" "decode" "|" "wl-copy"; }
+    Mod+Y { spawn "bash" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
+    // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
     Ctrl+Alt+Delete { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
-    Mod+Shift+P { power-off-monitors; }
+//    Mod+Shift+P { power-off-monitors; }
+
 }
+

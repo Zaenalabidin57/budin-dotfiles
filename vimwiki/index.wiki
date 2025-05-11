@@ -1,0 +1,8 @@
+= My WikiBudin =
+
+== Daftar Isi Desuwa ==
+
+* [[man|Tutorial Cara pakai]]
+* [[curhat|keluarin unek unek disini]]
+* [[need|Kembalikan abudin]]
+* 

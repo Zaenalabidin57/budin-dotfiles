@@ -3,7 +3,8 @@ text-color=#cad3f5
 width=320
 height=110
 padding=8
-margin=990,12,6
+#margin=990,12,6
+margin=12,12,6
 border-size=2
 border-color=#8aadf4
 border-radius=12
@@ -13,7 +14,7 @@ default-timeout=5000
 font=Overpass Mono 11
 
 # Only for desktop, ignored when no such output exists
-#output=DP-1
+output=HDMI-1
 
 [urgency=high]
 layer=overlay

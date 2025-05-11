@@ -1,33 +1,46 @@
 {
-     "layer": "top", // Waybar at top layer
+     "layer": "bottom", // Waybar at top layer
      "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 13, // Waybar height (to be removed for auto height)
+    "height": 25, // Waybar height (to be removed for auto height)
+    //"height": 45, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 2, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["niri/workspaces"],
+    "modules-left": ["niri/workspaces","niri/window"],
     //"modules-center": ["niri/window"],
-    "modules-center": ["cava","wlr/taskbar"],
     //"modules-center": ["cava"],
-    "modules-right": ["network", "pulseaudio", "cpu", "memory",
-"temperature","backlight", "battery","clock", "tray"],
+    "modules-right": ["network", "pulseaudio", "cpu", "memory", "temperature","backlight", "battery", "clock","tray"],
     // Modules configuration
-     "niri/workspaces": {
-         "disable-scroll": true,
-         "all-outputs": true,
-         "warp-on-scroll": false,
-         "format": "{icon}",
-         "format-icons": {
-             "1": "1",
-             "2": "2",
-             "3": "3",
-             "4": "4",
-             "5": "5",
-             "urgent": "",
-            // "focused": "",
-            // "default": ""
-         }
-     },
+    // "sway/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "warp-on-scroll": false,
+    //     "format": "{name}: {icon}",
+    //     "format-icons": {
+    //         "1": "",
+    //         "2": "",
+    //         "3": "",
+    //         "4": "",
+    //         "5": "",
+    //         "urgent": "",
+    //         "focused": "",
+    //         "default": ""
+    //     }
+    // },
+  "niri/workspaces": {
+	"format": "{icon}",
+	//"format": "{name}: {icon}",
+	"format-icons": {
+		"1": "1",
+		"2": "2",
+		"3": "3",
+		"4": "4",
+		"5": "5",
+		//"active": "",
+		//"default": ""
+	},
+	"sort-by-number": true
+}, 
 
     "keyboard-state": {
         "numlock": true,
@@ -38,14 +51,6 @@
             "unlocked": ""
         }
     },
-  "wlr/taskbar": {
-    //"format": "{title} | {app_id}",
-    //"format": " {icon} {app_id} |",
-    "format": "  {icon} |",
-    "on-click": "activate",
-    "on-click-right": "minimize",
-      
-},
     "wlr/mode": {
         "format": "<span style=\"italic\">{}</span>",
         "max-length": 20
@@ -202,29 +207,29 @@
   "format": "{}",   // <--- these is the default value  
   "max-length": 50,
   	"rewrite": {
-  		"(.*) - Zen Browser": "🌎 $1",
-  		"(.*) - zsh": "> [$1]"
+  		"(.*) - zen browser": "🌎 $1",
+  		"(.*) - fish": "> [$1]"
   	},
 //"format": "<span font='9' rise='-4444'>{}</span>"  
 },
 },
 "cava": {
   	//"cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
-  	"framerate": 30,
+  	"framerate": 60,
   	"autosens": 1,
   	//"sensitivity": 100,
-  	"bars": 14,
+  	"bars": 10,
   	"lower_cutoff_freq": 50,
   	"higher_cutoff_freq": 1000,
-  	"method": "pipe",
+  	"method": "pipewire",
   	"source": "auto",
   	"stereo": true,
   	"reverse": false,
   	"bar_delimiter": 0,
   	"monstercat": false,
-  	"waves": false,
+  	"waves": true,
   	"noise_reduction": 0.77,
-  	"input_delay": 2,
+  	"input_delay": 8,
   	"format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
   	"actions": {
   		"on-click-right": "mode"

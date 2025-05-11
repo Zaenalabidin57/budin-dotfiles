@@ -6,7 +6,6 @@ return {
       require "configs.conform"
     end,
   },
-
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -149,7 +148,7 @@ return {
       vim.keymap.set("n", "<leader>sd", function()
         possession.delete()
       end, { desc = "delete sessions" })
-      possession.sessions_path = "~/.local/share/nvim/sessions/"
+      possession.sessions_path = "home/shigure/.local/share/nvim/sessions/"
     end,
   },
   {
@@ -178,12 +177,13 @@ return {
     end,
     config = function()
       vim.g.vimtex_view_method = "zathura"
-      vim.g.vimtex_compiler_method = "latexmk"
+      vim.g.vimtex_compiler_method = "tectonic"
     end,
   },
   {
     "ggandor/leap.nvim",
     lazy = false,
+     commit = '5ae080b646021bbb6e1d8715b155b1e633e28166',
     config = function()
       require("leap").add_default_mappings()
     end,
@@ -494,6 +494,40 @@ return {
     ft = 'typst',
     lazy=false,
   },
+  {
+    "EggbertFluffle/beepboop.nvim",
+    enabled=false,
+    lazy=false,
+    opts = {
+        audio_player = "paplay",
+        max_sounds = 20,
+        sound_directory = "/home/shigure/.config/scripts/media/nvim",
+        sound_map = {
+            -- SOUND MAP DEFENITIONS HERE
+        { auto_command = "VimEnter", sound = "boom.ogg" },
+        { key_map = { mode = "n", key_chord = "<leader>" }, sound = "boom.ogg" },
+        { key_map = { mode = "n", key_chord = "<CR>" }, sound = "boom.ogg" },
+        { key_map = { mode = "n", key_chord = "<Esc>" }, sound = "boom.ogg" },
+        { auto_command = "InsertCharPre", sounds =  {"click.ogg"} }
+        },
+    }
+},
+
+  {
+    'tamton-aquib/duck.nvim',
+    config = function()
+        vim.keymap.set('n', '<leader>dd', function() require("duck").hatch() end, {})
+        vim.keymap.set('n', '<leader>dk', function() require("duck").cook() end, {})
+        vim.keymap.set('n', '<leader>da', function() require("duck").cook_all() end, {})
+    end
+},
+  {
+    'chipsenkbeil/distant.nvim',
+    branch = 'v0.3',
+    config = function()
+        require('distant'):setup()
+    end
+},
   -- {
   --     "OXY2DEV/markview.nvim",
   --     enable = false,

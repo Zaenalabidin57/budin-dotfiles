@@ -45,11 +45,25 @@ Plug 'vimsence/vimsence'
 Plug 'ap/vim-buftabline'
 Plug 'mattn/emmet-vim'
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+Plug 'fidian/hexmode'
+Plug '907th/vim-auto-save'
+Plug 'sheerun/vim-polyglot'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'djoshea/vim-autoread'
+Plug 'vimwiki/vimwiki'
 call plug#end()
+" plugin config
+let g:auto_save_silent = 1
+let g:auto_save_events = ["TextChangedI"]
+let g:auto_save = 1
 
 
-
-
+" config vimwiki
+" let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '/home/shigure/Yandex.Disk/Arch/Docomento/kisah_budin/'}]
+" config
+let skip_defaults_vim=1
+let &fillchars ..= ',eob: '
 
 " warna catppuccin
 let g:lightline = {'colorscheme': 'catppuccin_mocha'}
@@ -72,12 +86,16 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 
 nnoremap <silent> <leader>c :call codeium#chat()<CR>
 
+nnoremap <leader>x :bd<CR>
+
 let g:codeium_workspace_root_hints = ['.bzr','.git','.hg','.svn','_FOSSIL_','package.json']
 " Turn on syntax highlighting
 syntax on
 
 " For plugins to load correctly
 filetype plugin indent on
+
+" highlight comment
 
 " TODO: Pick a leader key
  let mapleader = " "
@@ -92,7 +110,7 @@ let g:session_autosave_silent = 1
 let g:session_default_name = "sesi "
 
 
-nnoremap <leader>ss :SaveSession 
+nnoremap <leader>ss :SaveSession<CR>
 nnoremap <leader>so :OpenSession<CR>
 nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
@@ -106,13 +124,29 @@ nnoremap <silent> <leader>fb :Buffers<CR>
 "Set Termgui colors
 set termguicolors
 
+"setting desuwa
+set nobackup
+set noswapfile
+set foldmethod=marker
+set re=1 " < holy grail right here
+
+
 autocmd VimEnter * hi Normal guibg=NONE ctermbg=NONE
 
 " Security
 set modelines=0
 
 " Show line numbers
-set relativenumber
+"set relativenumber
+set number
+set numberwidth=1
+
+set laststatus=0
+" interactivity
+autocmd InsertEnter * set relativenumber
+autocmd InsertLeave * set norelativenumber
+
+au CursorHold * checktime
 
 " Show file stats
 set ruler
@@ -165,6 +199,7 @@ set ignorecase
 set smartcase
 set showmatch
 map <leader><space> :let @/=''<cr>
+map <leader><x> :bd<cr>
 " clear search
 
 " Remap help key.
@@ -212,3 +247,4 @@ map <leader>l :set list!<CR>
 colorscheme catppuccin_macchiato
 
 
+"highlight Comment ctermfg=#000000 guifg=magenta

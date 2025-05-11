@@ -1,35 +1,48 @@
 font-family = AbudinCode
+#font-family = FreeMono
+#font-family = glossy personal use
 #
 #font-family = Sans Forgetica
 font-style = Regular
-font-size = 13
-font-thicken = true
+font-size = 12
+#font-thicken = true
+font-thicken = false
 
-adjust-underline-position = 40%
+adjust-underline-position = 20%
+adjust-cell-height = -15%
 adjust-underline-thickness = -60%
+
+# background opacity
+#background-opacity = 0.8
+#background-blur = true
 
 cursor-style = block
 cursor-style-blink = false
 
 focus-follows-mouse = true
 
-shell-integration = zsh
+shell-integration = fish
 shell-integration-features = no-cursor
 
 keybind = alt+f=new_split:down
 keybind = alt+g=new_split:right
 keybind = alt+t=new_tab
+keybind = alt+j=goto_split:next
+keybind = alt+k=goto_split:previous
+#keybind = alt+w=increase_font_size
+#keybind = alt+e=decrease_font_size
 
 window-width = 80
-window-height = 45
+window-height = 28
 window-padding-x = 4
 
 confirm-close-surface = false
 clipboard-paste-protection = false
 unfocused-split-opacity = 1.0
 
-theme = catppuccin-mocha
-background = #333333
+#theme = catppuccin-mocha
+theme = Aura
+background = #040613
 foreground = #f4f4ff
 cursor-color = #ff0078
 
@@ -38,3 +51,5 @@ selection-foreground = eeeeee
 
 palette = 4=#3D52E2
 palette = 12=#344CFF
+
+

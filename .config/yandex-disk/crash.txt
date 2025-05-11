@@ -14,3 +14,162 @@ Got signal
 Got signal 
 2024-12-31.19:00:16
 Got signal 
+2025-01-04.06:19:18
+Got signal 
+2025-01-04.14:55:13
+Got signal 
+2025-01-06.09:24:09
+Got signal 
+2025-01-07.13:48:45
+Got signal 
+2025-01-07.21:05:36
+Got signal 
+2025-01-08.21:40:21
+Got signal 
+2025-01-09.09:02:26
+Got signal 
+2025-01-09.17:32:15
+Got signal 
+2025-01-11.20:58:29
+Got signal 
+2025-01-13.14:13:19
+Got signal 
+2025-01-13.20:29:06
+Got signal 
+2025-01-14.05:40:36
+Got signal 
+2025-01-14.13:02:28
+Got signal 
+2025-01-14.14:37:00
+Got signal 
+2025-01-15.15:23:24
+Got signal 
+2025-01-16.22:18:07
+Got signal 
+2025-01-17.17:45:02
+Got signal 
+2025-01-17.18:21:03
+Got signal 
+2025-01-21.20:39:43
+Got signal 
+2025-01-22.11:21:56
+Got signal 
+2025-01-31.14:43:39
+Got signal 
+2025-02-03.16:34:49
+Got signal 
+2025-02-06.18:44:38
+Got signal 
+2025-02-08.15:46:57
+Got signal 
+2025-02-09.09:32:14
+Got signal 
+2025-02-10.14:54:14
+Got signal 
+2025-02-14.08:35:41
+Got signal 
+2025-02-17.13:56:35
+Got signal 
+2025-02-19.11:36:58
+Got signal 
+2025-02-19.20:23:03
+Got signal 
+2025-02-19.21:06:43
+Got signal 
+2025-02-20.13:09:33
+Got signal 
+2025-02-24.13:59:09
+Got signal 
+2025-02-25.12:56:54
+Got signal 
+2025-02-26.18:36:41
+Got signal 11, faulty address is 8, from 0xa5036c 
+0.1.6.1080 x64
+[bt] Execution path:
+[bt] /usr/bin/yandex-disk() [0xa5036c]
+[bt] /usr/bin/yandex-disk() [0xa5036c]
+[bt] /usr/bin/yandex-disk() [0xa5328f]
+[bt] /usr/bin/yandex-disk() [0x45a85a]
+[bt] /usr/bin/yandex-disk() [0x43288f]
+[bt] /usr/bin/yandex-disk() [0x8258e5]
+[bt] /usr/bin/yandex-disk() [0xa7424c]
+[bt] /usr/lib/libc.so.6(+0x9f90c) [0x7215b769f90c]
+[bt] /usr/lib/libc.so.6(+0x1214dc) [0x7215b77214dc]
+
+2025-03-01.09:11:26
+Got signal 
+2025-03-06.13:18:42
+Got signal 
+2025-03-17.15:36:19
+Got signal 
+2025-03-27.10:36:44
+Got signal 
+2025-03-27.11:32:05
+Got signal 
+2025-03-30.09:55:35
+Got signal 
+2025-04-01.22:28:56
+Got signal 
+2025-04-02.12:50:13
+Got signal 
+2025-04-09.15:34:27
+Got signal 11, faulty address is 0, from 0x7f20612d6444 
+0.1.6.1080 x64
+[bt] Execution path:
+[bt] /usr/lib/libstdc++.so.6(_ZSt18_Rb_tree_incrementPSt18_Rb_tree_node_base+0x24) [0x7f20612d6444]
+[bt] /usr/lib/libstdc++.so.6(_ZSt18_Rb_tree_incrementPSt18_Rb_tree_node_base+0x24) [0x7f20612d6444]
+[bt] /usr/bin/yandex-disk() [0xa4bf1a]
+[bt] /usr/bin/yandex-disk() [0xa4fdbc]
+[bt] /usr/bin/yandex-disk() [0xa5044a]
+[bt] /usr/bin/yandex-disk() [0xa5328f]
+[bt] /usr/bin/yandex-disk() [0x45a85a]
+[bt] /usr/bin/yandex-disk() [0x43288f]
+[bt] /usr/bin/yandex-disk() [0x8258e5]
+[bt] /usr/bin/yandex-disk() [0xa7424c]
+[bt] /usr/lib/libc.so.6(+0x9f90c) [0x7f206109f90c]
+[bt] /usr/lib/libc.so.6(+0x1214dc) [0x7f20611214dc]
+
+2025-04-12.18:18:25
+Got signal 
+2025-04-17.19:22:54
+Got signal 
+2025-04-18.10:42:58
+Got signal 
+2025-04-19.11:32:49
+Got signal 
+2025-04-29.10:46:07
+Got signal 11, faulty address is 60, from 0xa52c48 
+0.1.6.1080 x64
+[bt] Execution path:
+[bt] /usr/bin/yandex-disk() [0xa52c48]
+[bt] /usr/bin/yandex-disk() [0xa52c48]
+[bt] /usr/bin/yandex-disk() [0xa4eff3]
+[bt] /usr/bin/yandex-disk() [0xa51c65]
+[bt] /usr/bin/yandex-disk() [0x43288f]
+[bt] /usr/bin/yandex-disk() [0x8258e5]
+[bt] /usr/bin/yandex-disk() [0xa7424c]
+[bt] /usr/lib/libc.so.6(+0x9f90a) [0x7f43ba49f90a]
+[bt] /usr/lib/libc.so.6(+0x1214dc) [0x7f43ba5214dc]
+
+2025-04-29.12:47:14
+Got signal 11, faulty address is 60, from 0xa52c48 
+0.1.6.1080 x64
+[bt] Execution path:
+[bt] /usr/bin/yandex-disk() [0xa52c48]
+[bt] /usr/bin/yandex-disk() [0xa52c48]
+[bt] /usr/bin/yandex-disk() [0xa4eff3]
+[bt] /usr/bin/yandex-disk() [0xa51c65]
+[bt] /usr/bin/yandex-disk() [0x43288f]
+[bt] /usr/bin/yandex-disk() [0x8258e5]
+[bt] /usr/bin/yandex-disk() [0xa7424c]
+[bt] /usr/lib/libc.so.6(+0x9f90a) [0x7f526829f90a]
+[bt] /usr/lib/libc.so.6(+0x1214dc) [0x7f52683214dc]
+
+2025-05-03.09:25:20
+Got signal 
+2025-05-04.22:22:39
+Got signal 
+2025-05-05.13:08:05
+Got signal 
+2025-05-05.13:17:37
+Got signal 

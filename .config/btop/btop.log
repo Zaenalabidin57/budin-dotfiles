@@ -237,3 +237,583 @@
 2024/10/22 (18:08:56) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
 2024/10/22 (18:08:56) | ERROR: Couldn't determine terminal size of "/dev/tty"!
 2024/10/22 (18:08:56) | ERROR: Failed to get size of terminal!
+
+2025/01/03 (21:24:26) | ===> btop++ v.1.4.0
+2025/01/03 (21:24:27) | ERROR: Stall in Runner thread, restarting!
+2025/01/03 (21:24:38) | ERROR: Stall in Runner thread, restarting!
+2025/01/03 (21:25:52) | WARNING: Failed to join _runner thread on exit!
+
+2025/01/03 (21:28:11) | ===> btop++ v.1.4.0
+2025/01/03 (21:28:12) | ERROR: Stall in Runner thread, restarting!
+2025/01/03 (22:35:05) | ERROR: Runner thread died unexpectedly!
+
+2025/01/24 (13:31:25) | ===> btop++ v.1.4.0
+2025/01/24 (13:31:25) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/24 (13:31:25) | ERROR: Couldn't determine terminal size of "/dev/tty"!
+
+2025/02/17 (14:28:20) | ===> btop++ v.1.4.0
+2025/02/17 (14:28:20) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/18 (11:55:26) | ===> btop++ v.1.4.0
+2025/02/18 (11:55:26) | ERROR: Stall in Runner thread, restarting!
+
+2025/02/18 (16:35:32) | ===> btop++ v.1.4.0
+2025/02/18 (16:35:32) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/18 (21:09:48) | ===> btop++ v.1.4.0
+2025/02/18 (21:09:48) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/18 (21:46:12) | ===> btop++ v.1.4.0
+2025/02/18 (21:46:12) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/19 (07:02:10) | ===> btop++ v.1.4.0
+2025/02/19 (07:02:10) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/19 (10:18:45) | ===> btop++ v.1.4.0
+2025/02/19 (10:18:45) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/19 (14:23:36) | ===> btop++ v.1.4.0
+2025/02/19 (14:23:36) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/21 (15:50:53) | ===> btop++ v.1.4.0
+2025/02/21 (15:50:53) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/21 (21:37:38) | ===> btop++ v.1.4.0
+2025/02/21 (21:37:38) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/22 (14:11:01) | ===> btop++ v.1.4.0
+2025/02/22 (14:11:01) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/22 (14:13:10) | ===> btop++ v.1.4.0
+2025/02/22 (14:13:10) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/22 (16:35:36) | ===> btop++ v.1.4.0
+2025/02/22 (16:35:36) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+
+2025/02/25 (08:52:07) | ===> btop++ v.1.4.0
+2025/02/25 (08:52:07) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/25 (09:11:28) | ===> btop++ v.1.4.0
+2025/02/25 (09:11:28) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/25 (18:48:34) | ===> btop++ v.1.4.0
+2025/02/25 (18:48:34) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/27 (16:42:45) | ===> btop++ v.1.4.0
+2025/02/27 (16:42:45) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/27 (16:57:51) | ===> btop++ v.1.4.0
+2025/02/27 (16:57:51) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/27 (17:03:22) | ===> btop++ v.1.4.0
+2025/02/27 (17:03:22) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/27 (17:05:41) | ===> btop++ v.1.4.0
+2025/02/27 (17:05:41) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/27 (17:34:52) | ===> btop++ v.1.4.0
+2025/02/27 (17:34:52) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/27 (17:38:57) | ===> btop++ v.1.4.0
+2025/02/27 (17:38:57) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/27 (17:39:08) | ===> btop++ v.1.4.0
+2025/02/27 (17:39:08) | WARNING: Failed to join _runner thread on exit!
+
+2025/02/28 (17:38:58) | ===> btop++ v.1.4.0
+2025/02/28 (17:38:58) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/02 (21:29:29) | ===> btop++ v.1.4.0
+2025/03/02 (21:29:29) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/03 (10:10:18) | ===> btop++ v.1.4.0
+2025/03/03 (10:10:18) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/03 (14:41:31) | ===> btop++ v.1.4.0
+2025/03/03 (14:41:31) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/04 (11:10:08) | ===> btop++ v.1.4.0
+2025/03/04 (11:10:08) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/04 (12:43:52) | ===> btop++ v.1.4.0
+2025/03/04 (12:43:52) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/04 (12:44:04) | ===> btop++ v.1.4.0
+2025/03/04 (12:44:04) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/04 (15:45:48) | ===> btop++ v.1.4.0
+2025/03/04 (15:45:48) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/05 (09:03:57) | ===> btop++ v.1.4.0
+2025/03/05 (09:03:57) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/07 (13:14:21) | ===> btop++ v.1.4.0
+2025/03/07 (13:14:21) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/08 (12:34:13) | ===> btop++ v.1.4.0
+2025/03/08 (12:34:13) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/08 (13:17:04) | ===> btop++ v.1.4.0
+2025/03/08 (13:17:04) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/08 (14:10:21) | ===> btop++ v.1.4.0
+2025/03/08 (14:10:21) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/08 (16:47:38) | ===> btop++ v.1.4.0
+2025/03/08 (16:47:38) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/08 (18:48:49) | ===> btop++ v.1.4.0
+2025/03/08 (18:48:49) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/08 (20:35:42) | ===> btop++ v.1.4.0
+2025/03/08 (20:35:42) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/08 (22:11:30) | ===> btop++ v.1.4.0
+2025/03/08 (22:11:30) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/08 (22:12:15) | ===> btop++ v.1.4.0
+2025/03/08 (22:12:15) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/09 (20:49:24) | ===> btop++ v.1.4.0
+2025/03/09 (20:49:24) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/10 (10:47:13) | ===> btop++ v.1.4.0
+2025/03/10 (10:47:13) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/11 (19:24:28) | ===> btop++ v.1.4.0
+2025/03/11 (19:24:28) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/12 (11:44:08) | ===> btop++ v.1.4.0
+2025/03/12 (11:44:08) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/12 (15:49:24) | ===> btop++ v.1.4.0
+2025/03/12 (15:49:24) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/13 (11:00:05) | ===> btop++ v.1.4.0
+2025/03/13 (11:00:05) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/13 (14:58:33) | ===> btop++ v.1.4.0
+2025/03/13 (14:58:33) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/14 (17:09:45) | ===> btop++ v.1.4.0
+2025/03/14 (17:09:45) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/14 (17:13:26) | ===> btop++ v.1.4.0
+2025/03/14 (17:13:26) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/14 (17:37:28) | ===> btop++ v.1.4.0
+2025/03/14 (17:37:28) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/14 (17:39:07) | ===> btop++ v.1.4.0
+2025/03/14 (17:39:07) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/14 (21:46:12) | ===> btop++ v.1.4.0
+2025/03/14 (21:46:12) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/15 (07:42:36) | ===> btop++ v.1.4.0
+2025/03/15 (07:42:36) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/17 (13:57:04) | ===> btop++ v.1.4.0
+2025/03/17 (13:57:04) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/17 (13:57:21) | ===> btop++ v.1.4.0
+2025/03/17 (13:57:21) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/17 (18:49:59) | ===> btop++ v.1.4.0
+2025/03/17 (18:49:59) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/17 (21:18:40) | ===> btop++ v.1.4.0
+2025/03/17 (21:18:40) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/17 (21:34:24) | ===> btop++ v.1.4.0
+2025/03/17 (21:34:24) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/17 (21:34:24) | ERROR: Couldn't determine terminal size of "/dev/tty"!
+
+2025/03/17 (22:08:03) | ===> btop++ v.1.4.0
+2025/03/17 (22:08:03) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/17 (22:17:52) | ===> btop++ v.1.4.0
+2025/03/17 (22:17:52) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/18 (11:52:45) | ===> btop++ v.1.4.0
+2025/03/18 (11:52:45) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/18 (18:55:08) | ===> btop++ v.1.4.0
+2025/03/18 (18:55:08) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/18 (21:47:13) | ===> btop++ v.1.4.0
+2025/03/18 (21:47:13) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/19 (13:19:11) | ===> btop++ v.1.4.0
+2025/03/19 (13:19:11) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/19 (13:46:00) | ===> btop++ v.1.4.0
+2025/03/19 (13:46:00) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/19 (20:50:42) | ===> btop++ v.1.4.0
+2025/03/19 (20:50:42) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/19 (21:24:16) | ===> btop++ v.1.4.0
+2025/03/19 (21:24:16) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/20 (20:38:25) | ===> btop++ v.1.4.0
+2025/03/20 (20:38:25) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/21 (13:10:23) | ===> btop++ v.1.4.0
+2025/03/21 (13:10:23) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/22 (14:35:46) | ===> btop++ v.1.4.0
+2025/03/22 (14:35:46) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/22 (14:35:52) | ===> btop++ v.1.4.0
+2025/03/22 (14:35:52) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/22 (14:36:29) | ===> btop++ v.1.4.0
+2025/03/22 (14:36:29) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/22 (14:37:09) | ===> btop++ v.1.4.0
+2025/03/22 (14:37:09) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/22 (17:02:31) | ===> btop++ v.1.4.0
+2025/03/22 (17:02:31) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/22 (20:04:46) | ===> btop++ v.1.4.0
+2025/03/22 (20:04:46) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:46) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:47) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:47) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:47) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:47) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:47) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:47) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:47) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:47) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:47) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:47) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:47) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:48) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:48) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:48) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:48) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:48) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:48) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:48) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:48) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:48) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:48) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:49) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:49) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:49) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:49) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:49) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:49) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:49) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:49) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:49) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:50) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:50) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:50) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:50) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:50) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:50) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:50) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:50) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:50) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/03/22 (20:04:50) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+
+2025/03/22 (20:05:50) | ===> btop++ v.1.4.0
+2025/03/22 (20:05:50) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/22 (20:36:53) | ===> btop++ v.1.4.0
+2025/03/22 (20:36:53) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/23 (15:04:14) | ===> btop++ v.1.4.0
+2025/03/23 (15:04:14) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/23 (15:06:13) | ===> btop++ v.1.4.0
+2025/03/23 (15:06:13) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/24 (13:05:25) | ===> btop++ v.1.4.0
+2025/03/24 (13:05:25) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/24 (15:51:00) | ===> btop++ v.1.4.0
+2025/03/24 (15:51:00) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/24 (15:52:16) | ===> btop++ v.1.4.0
+2025/03/24 (15:52:16) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/24 (15:54:25) | ===> btop++ v.1.4.0
+2025/03/24 (15:54:25) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/24 (16:06:10) | ===> btop++ v.1.4.0
+2025/03/24 (16:06:10) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/26 (13:06:40) | ===> btop++ v.1.4.0
+2025/03/26 (13:06:40) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/26 (13:32:09) | ===> btop++ v.1.4.0
+2025/03/26 (13:32:09) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/26 (15:37:00) | ===> btop++ v.1.4.0
+2025/03/26 (15:37:00) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/27 (11:07:51) | ===> btop++ v.1.4.0
+2025/03/27 (11:07:51) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/27 (12:34:34) | ===> btop++ v.1.4.0
+2025/03/27 (12:34:34) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/27 (12:54:24) | ===> btop++ v.1.4.0
+2025/03/27 (12:54:24) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/27 (14:37:14) | ===> btop++ v.1.4.0
+2025/03/27 (14:37:14) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/27 (15:38:23) | ===> btop++ v.1.4.0
+2025/03/27 (15:38:23) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/27 (16:04:07) | ===> btop++ v.1.4.0
+2025/03/27 (16:04:07) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/28 (13:38:10) | ===> btop++ v.1.4.0
+2025/03/28 (13:38:10) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/28 (20:37:16) | ===> btop++ v.1.4.0
+2025/03/28 (20:37:16) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/29 (08:17:33) | ===> btop++ v.1.4.0
+2025/03/29 (08:17:33) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/29 (14:02:12) | ===> btop++ v.1.4.0
+2025/03/29 (14:02:12) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/30 (13:56:59) | ===> btop++ v.1.4.0
+2025/03/30 (13:56:59) | WARNING: Failed to join _runner thread on exit!
+
+2025/03/30 (15:52:14) | ===> btop++ v.1.4.0
+2025/03/30 (15:52:14) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/01 (09:42:37) | ===> btop++ v.1.4.0
+2025/04/01 (09:42:37) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/03 (13:30:13) | ===> btop++ v.1.4.0
+2025/04/03 (13:30:13) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/03 (15:01:09) | ===> btop++ v.1.4.0
+2025/04/03 (15:01:09) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/04 (20:50:05) | ===> btop++ v.1.4.0
+2025/04/04 (20:50:05) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/05 (13:40:04) | ===> btop++ v.1.4.0
+2025/04/05 (13:40:04) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/06 (01:33:22) | ===> btop++ v.1.4.0
+2025/04/06 (01:33:22) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/08 (13:25:38) | ===> btop++ v.1.4.0
+2025/04/08 (13:25:38) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/08 (16:35:06) | ===> btop++ v.1.4.0
+2025/04/08 (16:35:06) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/08 (16:37:01) | ===> btop++ v.1.4.0
+2025/04/08 (16:37:01) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/09 (09:40:58) | ===> btop++ v.1.4.0
+2025/04/09 (09:40:58) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/09 (09:41:47) | ===> btop++ v.1.4.0
+2025/04/09 (09:41:47) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/09 (11:12:37) | ===> btop++ v.1.4.0
+2025/04/09 (11:12:37) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/09 (11:31:32) | ===> btop++ v.1.4.0
+2025/04/09 (11:31:32) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/09 (14:41:18) | ===> btop++ v.1.4.0
+2025/04/09 (14:41:18) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/09 (14:45:37) | ===> btop++ v.1.4.0
+2025/04/09 (14:45:37) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/09 (14:52:05) | ===> btop++ v.1.4.0
+2025/04/09 (14:52:05) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/09 (15:26:46) | ===> btop++ v.1.4.0
+2025/04/09 (15:26:46) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/10 (11:14:24) | ===> btop++ v.1.4.0
+2025/04/10 (11:14:24) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/11 (21:32:46) | ===> btop++ v.1.4.0
+2025/04/11 (21:32:46) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/12 (09:07:59) | ===> btop++ v.1.4.0
+2025/04/12 (09:07:59) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/12 (10:53:14) | ===> btop++ v.1.4.0
+2025/04/12 (10:53:14) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/12 (10:55:19) | ===> btop++ v.1.4.0
+2025/04/12 (10:55:19) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/12 (19:45:19) | ===> btop++ v.1.4.0
+2025/04/12 (19:45:19) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/13 (23:54:31) | ===> btop++ v.1.4.0
+2025/04/13 (23:54:31) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/14 (08:49:10) | ===> btop++ v.1.4.0
+2025/04/14 (08:49:10) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/14 (21:26:55) | ===> btop++ v.1.4.0
+2025/04/14 (21:26:55) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/15 (08:53:49) | ===> btop++ v.1.4.0
+2025/04/15 (08:53:49) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/15 (09:35:27) | ===> btop++ v.1.4.0
+2025/04/15 (09:35:27) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/15 (11:08:17) | ===> btop++ v.1.4.0
+2025/04/15 (11:08:17) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/15 (11:09:52) | ===> btop++ v.1.4.0
+2025/04/15 (11:09:52) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/15 (11:11:20) | ===> btop++ v.1.4.0
+2025/04/15 (11:11:20) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/17 (18:09:31) | ===> btop++ v.1.4.0
+2025/04/17 (18:09:31) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/17 (19:10:35) | ===> btop++ v.1.4.0
+2025/04/17 (19:10:35) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/17 (21:37:51) | ===> btop++ v.1.4.0
+2025/04/17 (21:37:51) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/18 (12:45:03) | ===> btop++ v.1.4.0
+2025/04/18 (12:45:03) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/18 (17:20:42) | ===> btop++ v.1.4.0
+2025/04/18 (17:20:42) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/18 (21:59:00) | ===> btop++ v.1.4.0
+2025/04/18 (21:59:00) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/19 (11:51:32) | ===> btop++ v.1.4.0
+2025/04/19 (11:51:32) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/19 (17:32:51) | ===> btop++ v.1.4.0
+2025/04/19 (17:32:51) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/21 (10:15:56) | ===> btop++ v.1.4.0
+2025/04/21 (10:15:56) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/21 (10:16:44) | ===> btop++ v.1.4.0
+2025/04/21 (10:16:44) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/21 (10:18:16) | ===> btop++ v.1.4.0
+2025/04/21 (10:18:16) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/21 (11:06:01) | ===> btop++ v.1.4.0
+2025/04/21 (11:06:01) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/21 (11:19:58) | ===> btop++ v.1.4.0
+2025/04/21 (11:19:58) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/21 (12:09:15) | ===> btop++ v.1.4.0
+2025/04/21 (12:09:15) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/22 (13:43:43) | ===> btop++ v.1.4.0
+2025/04/22 (13:43:43) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/22 (17:52:36) | ===> btop++ v.1.4.0
+2025/04/22 (17:52:36) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/23 (18:40:53) | ===> btop++ v.1.4.0
+2025/04/23 (18:40:53) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/23 (19:45:20) | ===> btop++ v.1.4.0
+2025/04/23 (19:45:20) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/23 (19:51:32) | ===> btop++ v.1.4.0
+2025/04/23 (19:51:32) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/24 (18:24:13) | ===> btop++ v.1.4.0
+2025/04/24 (18:24:13) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/25 (14:26:38) | ===> btop++ v.1.4.0
+2025/04/25 (14:26:38) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/25 (15:06:42) | ===> btop++ v.1.4.0
+2025/04/25 (15:06:42) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/26 (21:30:16) | ===> btop++ v.1.4.0
+2025/04/26 (21:30:16) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/27 (10:12:02) | ===> btop++ v.1.4.0
+2025/04/27 (10:12:02) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/27 (10:13:44) | ===> btop++ v.1.4.0
+2025/04/27 (10:13:44) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/27 (10:27:39) | ===> btop++ v.1.4.0
+2025/04/27 (10:27:39) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/27 (11:00:26) | ===> btop++ v.1.4.0
+2025/04/27 (11:00:26) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/27 (12:57:56) | ===> btop++ v.1.4.0
+2025/04/27 (12:57:56) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/27 (13:09:32) | ===> btop++ v.1.4.0
+2025/04/27 (13:09:32) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/28 (13:31:24) | ===> btop++ v.1.4.0
+2025/04/28 (13:31:24) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/28 (13:49:58) | ===> btop++ v.1.4.0
+2025/04/28 (13:49:58) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/28 (13:50:10) | ===> btop++ v.1.4.0
+2025/04/28 (13:50:10) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/28 (13:50:31) | ===> btop++ v.1.4.0
+2025/04/28 (13:50:31) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/28 (13:56:42) | ===> btop++ v.1.4.0
+2025/04/28 (13:56:42) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/28 (20:03:33) | ===> btop++ v.1.4.0
+2025/04/28 (20:03:33) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/29 (06:24:47) | ===> btop++ v.1.4.0
+2025/04/29 (06:24:47) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/29 (14:42:18) | ===> btop++ v.1.4.0
+2025/04/29 (14:42:18) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/29 (18:31:38) | ===> btop++ v.1.4.0
+2025/04/29 (18:31:38) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/29 (18:58:03) | ===> btop++ v.1.4.0
+2025/04/29 (18:58:03) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/29 (19:02:22) | ===> btop++ v.1.4.0
+2025/04/29 (19:02:22) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/29 (20:03:56) | ===> btop++ v.1.4.0
+2025/04/29 (20:03:56) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/29 (21:00:11) | ===> btop++ v.1.4.0
+2025/04/29 (21:00:11) | WARNING: Failed to join _runner thread on exit!
+
+2025/04/30 (00:35:06) | ===> btop++ v.1.4.0
+2025/04/30 (00:35:06) | WARNING: Failed to join _runner thread on exit!
+
+2025/05/02 (08:51:19) | ===> btop++ v.1.4.0
+2025/05/02 (08:51:19) | WARNING: Failed to join _runner thread on exit!

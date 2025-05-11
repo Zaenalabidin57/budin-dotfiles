@@ -4,8 +4,10 @@
 #
 # Read `man 5 sway` for a complete reference.
 exec --no-startup-id mako
-exec --no-startup-id autotiling
+#exec --no-startup-id autotiling
 exec --no-startup-id wl-paste --watch cliphist store
+exec --no-startup-id papersway
+exec --no-startup-id bash ~/.config/scripts/abodindwl/turu.sh
 
 #bikin cursor ngilang ngab
 seat seat0 hide_cursor 3000
@@ -115,7 +117,7 @@ output * bg /home/shigure/wollpeper/hearts.png fill
     # Start a terminal
     bindsym $mod+Return exec $term
     bindsym $mod+m exec neovide --multigrid
-    bindsym $mod+o exec firefox
+    bindsym $mod+o exec zen-browser
     bindsym $mod+n exec thunar
 
     # Kill focused window
@@ -155,10 +157,10 @@ output * bg /home/shigure/wollpeper/hearts.png fill
 # Moving around:
 #
     # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
+  bindsym $mod+j exec papersway-msg focus left
+  bindsym $mod+k exec papersway-msg focus right
+bindsym $mod+h resize shrink width 10 px or 10 ppt
+bindsym $mod+l resize grow width 10 px or 10 ppt
     # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -166,10 +168,9 @@ output * bg /home/shigure/wollpeper/hearts.png fill
     bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+j exec papersway-msg move left
+bindsym $mod+Shift+k exec papersway-msg move right
+
     # Ditto, with arrow keys
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
@@ -266,9 +267,9 @@ bindsym $mod+r mode "resize"
 
 #
 # Status Bar:
-bar {
-  swaybar_command waybar
-}
+# bar {
+#   swaybar_command waybar
+# }
 client.focused          #363a4f #5C8286 #181926 #2e9ef4   #8fbcbb
 client.focused_inactive #1e2030 #5f676a #181926 #484e50   #5f676a
 client.unfocused        #24273a #222222 #888888 #333845   #333845
