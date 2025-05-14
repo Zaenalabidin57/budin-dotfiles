@@ -1,5 +1,5 @@
 font-family = AbudinCode
-#font-family = FreeMono
+font-family = FreeMono
 #font-family = glossy personal use
 #
 #font-family = Sans Forgetica
@@ -41,7 +41,8 @@ clipboard-paste-protection = false
 unfocused-split-opacity = 1.0
 
 #theme = catppuccin-mocha
-theme = Aura
+#theme = catppuccin-latte
+theme = ayu_light
 background = #040613
 foreground = #f4f4ff
 cursor-color = #ff0078
