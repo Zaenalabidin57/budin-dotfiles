@@ -1,0 +1,14 @@
+
+login
+username: zaenalabidin
+password: HkfHSD9yyPDXMPTfgMXE
+
+Panel:
+https://sgda2.akiha.ru:2222
+
+Nameserver:
+ns3.akiha.ru
+ns4.akiha.ru
+
+SSH port
+53667

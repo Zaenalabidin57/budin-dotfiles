@@ -20,6 +20,7 @@ clipcatd &
 xss-lock -- sh -c "i3lock-fancy-multimonitor -p" &
 flameshot &
 #mechvibes &
+sxbar &
 
-sh ~/.config/scripts/abodindwm/bar_dwm.sh &
-while type chadwm >/dev/null; do chadwm && continue || break; done
+#sh ~/.config/scripts/abodindwm/bar_dwm.sh &
+while type sxwm >/dev/null; do sxwm && continue || break; done

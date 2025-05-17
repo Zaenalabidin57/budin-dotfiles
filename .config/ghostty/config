@@ -12,6 +12,8 @@ adjust-underline-position = 20%
 adjust-cell-height = -15%
 adjust-underline-thickness = -60%
 
+window-decoration = none
+
 # background opacity
 #background-opacity = 0.8
 #background-blur = true

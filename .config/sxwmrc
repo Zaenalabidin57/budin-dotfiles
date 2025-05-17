@@ -1,0 +1,76 @@
+# Colour Themes:
+focused_border_colour    : #c0cbff
+unfocused_border_colour  : #555555
+swap_border_colour       : #fff4c0
+
+# General Options:
+gaps                    : 10
+border_width            : 1
+master_width            : 50 # Percentage of screen width
+resize_master_amount    : 1
+snap_distance           : 5
+motion_throttle         : 60 # Set to screen refresh rate for smoothest motions
+
+# Keybinds:
+# Commands must be surrounded with ""
+# Function calls don't need this
+
+mod_key : super
+
+# Application Launchers:
+ bind : [mod + Return] : "st"
+ bind : [mod + o] : "zen-browser"
+ bind : [mod + n] : "thunar"
+ bind : [mod + d] : "dmenu_run"
+
+# Window Management:
+call : mod + shift + q : close_window
+call : mod + shift + e : quit
+
+# Focus Movement:
+call : mod + j : focus_next
+call : mod + k : focus_prev
+
+# Master/Stack Movement
+call : mod + shift + j : master_next
+call : mod + shift + k : master_previous
+
+# Master Area Resize
+call : mod + l : master_increase
+call : mod + h : master_decrease
+
+# Gaps 
+call : mod + equal : increase_gaps
+call : mod + minus : decrease_gaps
+
+# Floating/Fullscreen
+call : mod + space : toggle_floating
+call : mod + shift + space : global_floating
+call : mod + shift + f : fullscreen
+
+call : mod + s : hide_win
+call : mod + shift + s : restore_win
+
+
+# Reload Config
+call : mod + r : reload_config
+# Launch terminal with Mod + Enter
+#
+# # Close focused window with Mod + Shift + Q
+bind : [mod + q] : close_window
+#
+# # Switch to workspace 3 with Mod + 3
+bind : [mod + z] : change_ws3
+bind : [mod + x] : change_ws3
+bind : [mod + c] : change_ws3
+bind : [mod + v] : change_ws3
+bind : [mod + b] : change_ws3
+#
+# # Move focused window to workspace 5 with Mod + Shift + 5
+bind : [mod + shift + z] : moveto_ws5
+bind : [mod + shift + x] : moveto_ws5
+bind : [mod + shift + c] : moveto_ws5
+bind : [mod + shift + v] : moveto_ws5
+bind : [mod + shift + b] : moveto_ws5
+
+

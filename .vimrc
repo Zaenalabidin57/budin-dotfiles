@@ -24,6 +24,7 @@ set clipboard=unnamedplus
 " Don't try to be vi compatible
 set nocompatible
 
+
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
@@ -42,13 +43,15 @@ Plug 'junegunn/fzf.vim'
 Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
 Plug 'vimsence/vimsence'
-Plug 'ap/vim-buftabline'
+"Plug 'ap/vim-buftabline'
 Plug 'mattn/emmet-vim'
+Plug 'nanotee/zoxide.vim'
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'fidian/hexmode'
 Plug '907th/vim-auto-save'
 Plug 'sheerun/vim-polyglot'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'junegunn/vim-peekaboo'
 Plug 'djoshea/vim-autoread'
 Plug 'vimwiki/vimwiki'
 call plug#end()
@@ -57,6 +60,8 @@ let g:auto_save_silent = 1
 let g:auto_save_events = ["TextChangedI"]
 let g:auto_save = 1
 
+set ts=4 sw=4
+"set showtabline=2
 
 " config vimwiki
 " let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
@@ -244,6 +249,7 @@ map <leader>l :set list!<CR>
 "let g:solarized_termtrans=1
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
+set background=dark
 colorscheme catppuccin_macchiato
 
 

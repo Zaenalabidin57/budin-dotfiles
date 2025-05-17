@@ -2,7 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
     alias cd='z'
     alias icat='kitten icat'
-    alias vim='nvim'
+    #alias vim='nvim'
     alias kranger='kitty -e ranger .'
     alias neofetch='fastfetch'
     alias winevn='LANG=ja_JP.utf8 WINEPREFIX=/home/shigure/gaem/.winevn wine'
@@ -35,6 +35,12 @@ function y
 		builtin cd -- "$cwd"
 	end
 	rm -f -- "$tmp"
+end
+
+if test -e "$HOME/.nix-profile/share/fish/site-functions"
+  set -gx NIX_SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
+  set -gx PATH "$HOME/.nix-profile/bin" $PATH
+  status --is-interactive; and source "$HOME/.nix-profile/etc/profile.d/nix.fish"
 end
 
 # if status is-login
