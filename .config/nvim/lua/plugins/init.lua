@@ -38,6 +38,10 @@ return {
         "css",
       },
     },
+    update_focused_file = {
+      enable = true,
+      update_cwd = true,
+    },
   },
   {
     "utilyre/barbecue.nvim",
@@ -398,6 +402,9 @@ return {
     end,
   },
   {
+    'jvgrootveld/telescope-zoxide',
+  },
+  {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     enable = true,
@@ -525,78 +532,46 @@ return {
     'chipsenkbeil/distant.nvim',
     branch = 'v0.3',
     config = function()
-        require('distant'):setup()
+        require('distant').setup()
     end
 },
-  -- {
-  --     "OXY2DEV/markview.nvim",
-  --     enable = false,
-  --     lazy = false,      -- Recommended
-  --     -- ft = "markdown" -- If you decide to lazy-load anyway
-  --     config = function()
-  --       require("markview").setup({
-  --         latex = {
-  --       enable = true,
-  --
-  --       brackets = {
-  --           enable = true,
-  --           opening = {
-  --               { "(", "MarkviewHeading1Sign" },
-  --               { "{", "MarkviewHeading2Sign" },
-  --               { "[", "MarkviewHeading3Sign" },
-  --           },
-  --           closing = {
-  --               { ")", "MarkviewHeading1Sign" },
-  --               { "}", "MarkviewHeading2Sign" },
-  --               { "]", "MarkviewHeading3" },
-  --           },
-  --
-  --           -- scope = {
-  --           --  "DiagnosticVirtualTextError",
-  --           --  "DiagnosticVirtualTextOk",
-  --           --  "DiagnosticVirtualTextWarn",
-  --           -- }
-  --       },
-  --
-  --       -- Hides $$ inside lines
-  --       inline = {
-  --           enable = true
-  --       },
-  --
-  --       -- Highlights lines within $$ $$
-  --       block = {
-  --           hl = "Code",
-  --           text = { " Latex ", "Special" }
-  --       },
-  --
-  --       -- Symbols, e.g. \geq
-  --       symbols = {
-  --           enable = true,
-  --           -- Your own set of symbols, e.g.
-  --           -- {
-  --           --   name = "symbol"
-  --           -- }
-  --           overwrite = {}
-  --       },
-  --
-  --       subscript = {
-  --           enable = true
-  --       },
-  --       superscript = {
-  --           enable = true
-  --       },
-  --   }
-  --       })
-  --     end,
-  --
-  --     dependencies = {
-  --         -- You will not need this if you installed the
-  --         -- parsers manually
-  --         -- Or if the parsers are in your $RUNTIMEPATH
-  --         "nvim-treesitter/nvim-treesitter",
-  --
-  --         "nvim-tree/nvim-web-devicons"
-  --     }
-  -- },
-  -- {
+  {
+   "m4xshen/hardtime.nvim",
+   lazy = false,
+    enabled = false,
+   dependencies = { "MunifTanjim/nui.nvim" },
+    config =function()
+    require("hardtime").setup()
+    end,
+   opts = {},
+},
+{
+  -- You can also use the codeberg mirror if you want to use the plugin without relying on GitHub
+  -- "https://codeberg.org/CodingThunder/zincoxide.git" -- for HTTPS
+  -- "git@codeberg.org:CodingThunder/zincoxide.git"     -- for SSH
+  -- NOTE: the username on both github and codeberg are different
+  "thunder-coding/zincoxide",
+  opts = {
+    -- name of zoxide binary in your "$PATH" or path to the binary
+    -- the command is executed using vim.fn.system()
+    -- eg. "zoxide" or "/usr/bin/zoxide"
+    zincoxide_cmd = "zoxide",
+    -- Kinda experimental as of now
+    complete = true,
+    -- Available options { "tabs", "window", "global" }
+    behaviour = "tabs",
+  },
+  cmd = { "Z", "Zg", "Zt", "Zw" },
+},
+  {
+  'stevearc/oil.nvim',
+  ---@module 'oil'
+  ---@type oil.SetupOpts
+  opts = {},
+  -- Optional dependencies
+  dependencies = { { "echasnovski/mini.icons", opts = {} } },
+  -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+  -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+  lazy = false,
+}
 }

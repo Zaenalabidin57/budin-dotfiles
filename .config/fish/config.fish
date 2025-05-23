@@ -2,7 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
     alias cd='z'
     alias icat='kitten icat'
-    #alias vim='nvim'
+    #    alias vim='nvim'
     alias kranger='kitty -e ranger .'
     alias neofetch='fastfetch'
     alias winevn='LANG=ja_JP.utf8 WINEPREFIX=/home/shigure/gaem/.winevn wine'
@@ -10,6 +10,7 @@ if status is-interactive
     alias uwe='sshfs server@192.168.100.69:/home/server/ uwe'
     alias cp= "/home/shigure/.local/bin/advcp -g"
     alias mv= "/home/shigure/.local/bin/advmv -g"
+    alias yt="yt-dlp --format 'bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]'"
     # zoxide init fish | source
 
 end

@@ -1,6 +1,8 @@
 require "nvchad.options"
 
 require("telescope").load_extension "harpoon"
+require("telescope").load_extension 'zoxide'
+
 
 
 -- vim.cmd "highlight! HarpoonInactive guibg=NONE guifg=#63698c"

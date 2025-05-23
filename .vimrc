@@ -23,6 +23,7 @@ set clipboard=unnamedplus
 
 " Don't try to be vi compatible
 set nocompatible
+"set paste
 
 
 " Helps force plugins to load correctly when it is turned back on below

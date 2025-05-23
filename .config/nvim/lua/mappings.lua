@@ -25,6 +25,8 @@ vim.keymap.set("n", "<RightMouse>", function()
 end, {})
 
 map("n", "<leader>fn", ":Telescope noice<CR>", {desc = "telescope noice"})
+map("n", "<leader>fz", ":Telescope zoxide list<CR>", {desc = "telescope zoxide list"})
+map("n", "<leader>o", ":Oil<CR>", {desc = "Oil"})
 map("n", "<leader>cc", ":Codeium Chat<CR>", {desc = "Codeium Chat"})
 
 map("n", "<leader>z", function()

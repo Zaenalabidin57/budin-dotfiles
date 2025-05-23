@@ -19,6 +19,7 @@ fastcompmgr &
 clipcatd &
 xss-lock -- sh -c "i3lock-fancy-multimonitor -p" &
 flameshot &
+gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh &
 #mechvibes &
 
 sh ~/.config/scripts/abodindwm/bar_dwm.sh &

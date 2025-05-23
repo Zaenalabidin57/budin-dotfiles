@@ -25,6 +25,7 @@ window#waybar.solo {
 }
 */
 
+
 window#waybar.termite {
     background-color: @base;
 }
@@ -101,6 +102,28 @@ button:hover {
     color: @text;
 }
 
+#taskbar {
+    padding: 0 10px;
+    color: @text;
+    background-color: @kcabground;
+}
+#taskbar button {
+    padding: 0 2px;
+    background-color: transparent;
+    color: @text;
+}
+#taskbar button.active {
+    background-color: @blue;
+    color: @kcabground;
+}
+#taskbar button.minimized {
+    background-color: @surface0;
+    color: @text;
+}
+#taskbar button.hover {
+    background: rgba(0, 0, 0, 0.2);
+    color: @lavender;
+}
 #window,
 #workspaces {
     margin: 0 4px;
