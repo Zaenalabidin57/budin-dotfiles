@@ -73,7 +73,7 @@ return {
     },
     dependencies = {
       {
-        "jcdickinson/codeium.nvim",
+        "Exafunction/windsurf.nvim",
         enabled = true,
         event = "VeryLazy",
         config = function()
@@ -573,5 +573,8 @@ return {
   -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
   -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
   lazy = false,
-}
+},
+  {
+    "ndonfris/fish-lsp",
+  },
 }

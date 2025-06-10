@@ -20,6 +20,8 @@ key "Super+Return"          st
 key "Super+KP_Subtract"     amixer sset Master 5%-
 key "Super+KP_Add"          amixer sset Master 5%+
 
+key "Print" flameshot gui
+
 # "Multimedia key" bindings for Xorg. Gather the keycodes of your
 # advanced function keys by watching the output of the xev command
 # whilst pressing those keys and map those symbols using xmodmap.

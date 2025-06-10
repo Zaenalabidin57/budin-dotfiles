@@ -256,14 +256,14 @@ layout {
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
 //
-spawn-at-startup "swaybg" "-i" "/home/shigure/Pictures/wollpeper/niri.jpg"
+spawn-at-startup "swaybg" "-i" "/home/shigure/Pictures/wptuyu6.jpg"
 //spawn-at-startup "swaybg" "-c" "040613"
 //spawn-at-startup "waypaper" "--restore"
 spawn-at-startup "dunst"
 spawn-at-startup "/usr/bin/kdeconnectd"
 spawn-at-startup "/usr/bin/kdeconnect-indicator"
 //spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-spawn-at-startup "waybar"
+//spawn-at-startup "waybar"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "24wollpeper.sh"
@@ -282,7 +282,7 @@ prefer-no-csd
 // A ~ at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
 //screenshot-path "~/Pictures/screenshot/Screenshot from %Y-%m-%d %H-%M-%S.png"
-screenshot-path "~/Pictures/screenshot/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 // You can also set this to null to disable saving screenshots to disk.
 // screenshot-path null
@@ -362,7 +362,7 @@ binds {
     Mod+D { spawn "fuzzel"; }
     Mod+W { spawn "rofi" "-modi" "emoji" "-show" "emoji"; }
    // Mod+D { spawn "wofi" "--show" "drun"; }
-    Mod+O { spawn "zen-browser"; }
+    Mod+O { spawn "brave"; }
     Mod+N { spawn "thunar"; }
     Super+Shift+P { spawn "swaylock" "-f" "--image" "/home/shigure/Pictures/wollpeper/ulul.jpg"; }
 

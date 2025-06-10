@@ -17,7 +17,7 @@ adjust-underline-position = 20%
 adjust-cell-height = -15%
 adjust-underline-thickness = -60%
 
-window-decoration = server
+window-decoration = none
 
 # background opacity
 #background-opacity = 0.8
@@ -34,8 +34,10 @@ shell-integration-features = no-cursor
 keybind = alt+f=new_split:down
 keybind = alt+g=new_split:right
 keybind = alt+t=new_tab
-keybind = alt+j=goto_split:next
-keybind = alt+k=goto_split:previous
+#keybind = alt+j=goto_split:next
+#keybind = alt+k=goto_split:previous
+keybind = alt+k=scroll_page_up
+keybind = alt+j=scroll_page_down
 #keybind = alt+w=increase_font_size
 #keybind = alt+e=decrease_font_size
 

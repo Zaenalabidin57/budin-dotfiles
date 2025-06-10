@@ -45,9 +45,22 @@ lspconfig.texlab.setup {
   settings = {
     texlab = {
       build = {
-        executable = "tectonic",
+       -- executable = "tectonic",
+        executable = "pdflatex",
         onType = true,
       },
     },
   },
+}
+lspconfig.fish_lsp.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  cmd = { 'fish-lsp', 'start' }, -- As specified in the documentation you found
+  settings = {
+    -- 'fish_lsp_show_client_popups' is an initialization option for fish-lsp
+    -- It should be a boolean value.
+    fish_lsp_show_client_popups = false,
+  },
+  filetypes = { "fish" }, -- Ensures it attaches to fish files
 }

@@ -1,0 +1,143 @@
+## CWM config file
+ 
+# Sticky groups: uncomment to enable worskpace-like behavior
+sticky                  yes
+ 
+# Default font
+fontname                "FreeMono:pixelsize=14:bold"
+ 
+# Appearance
+borderwidth             3
+color activeborder      "#f25ce5"
+color inactiveborder    "#565656"
+color urgencyborder     "#cc241d"
+ 
+# Menu colors
+color font              "#eeeeee"
+color selfont           "#eeeeee"
+color menubg            "#161616"
+color menufg            "#5294E2"
+ 
+#Gaps (top, bottom, left, right)
+gap                     32 8 8 8
+ 
+# Size of manually tiled Windows in %
+htile                   50
+vtile                   50
+ 
+# How many pixels a window gets moved by
+moveamount              10
+ 
+# Key bindings
+ 
+## 4 = Super key
+## S = shift
+## M = meta key = alt
+
+ 
+# Remove all default keybindings
+unbind-key      all
+ 
+# appuli
+#"tabbed", "-c", "-r", "2", "st", "-w", "''"
+bind-key 4-Return "tabbed -c -r 2 st -w ''"
+bind-key 4-n "thunar"
+bind-key 4-o "brave"
+#bind-key M-tab "rofi -show window"
+bind-key 4S-p "slock"
+bind-key 4-d "dmenu_run"
+bind-key 4S-e "st -e /home/shigure/exit.sh"
+# Toggle visibility of group n, hiding all other groups
+bind-key 4-z    group-only-1
+bind-key 4-x    group-only-2
+bind-key 4-c    group-only-3
+bind-key 4-v    group-only-4
+bind-key 4-b    group-only-5
+bind-key 4-6    group-only-6
+bind-key 4-7    group-only-7
+bind-key 4-8    group-only-8
+bind-key 4-9    group-only-9
+ 
+# Toggle group n's visibility, without hiding active group
+bind-key 4M-z   group-toggle-1
+bind-key 4M-x   group-toggle-2
+bind-key 4M-c   group-toggle-3
+bind-key 4M-v   group-toggle-4
+bind-key 4M-b   group-toggle-5
+bind-key 4M-6   group-toggle-6
+bind-key 4M-7   group-toggle-7
+bind-key 4M-8   group-toggle-8
+bind-key 4M-9   group-toggle-9
+ 
+# Move window to group n
+bind-key 4S-z   window-movetogroup-1
+bind-key 4S-x   window-movetogroup-2
+bind-key 4S-c   window-movetogroup-3
+bind-key 4S-v   window-movetogroup-4
+bind-key 4S-b   window-movetogroup-5
+bind-key 4S-6   window-movetogroup-6
+bind-key 4S-7   window-movetogroup-7
+bind-key 4S-8   window-movetogroup-8
+bind-key 4S-9   window-movetogroup-9
+ 
+# Toggle visibility of all groups
+bind-key 4-a    group-toggle-all
+ 
+# Add focused window to current group
+bind-key 4-g    window-group
+ 
+# What follows is rather self-explanatory
+bind-key 4s-r    restart
+bind-key 4S-q    quit
+ 
+bind-key 4-q    window-close
+bind-key 4-s    window-hide
+ 
+bind-key 4-f    window-fullscreen
+bind-key 4-m    window-maximize
+bind-key 4-t    window-htile
+bind-key 4S-t   window-vtile
+ 
+# Cycle/reverse cycle through windows
+bind-key 4-j    window-cycle
+bind-key 4-k    window-rcycle
+ 
+# Move windows
+bind-key 4S-j   window-move-left
+bind-key 4S-k   window-move-down
+bind-key 4S-i   window-move-up
+bind-key 4S-l   window-move-right
+ 
+# Snap windows
+bind-key 4M-j   window-snap-left
+bind-key 4M-k   window-snap-down
+bind-key 4M-i   window-snap-up
+bind-key 4M-l   window-snap-right
+ 
+# Open menus
+bind-key 4M-d   menu-window
+bind-key 4-g    menu-group
+bind-key 4-a    menu-cmd
+bind-key 4-e    menu-exec
+ 
+# rrat
+bind-mouse 4-2  	window_move
+bind-mouse 4-1 	window_resize
+
+# Autogroup some apps
+autogroup 1    "st,st"
+autogroup 1    "xterm,XTerm"
+autogroup 3    "Navigator,firefox-default"
+
+## Application menu
+	command file "thunar" 
+	command music "ghostty -e rmpc" 
+	command discord "discord"
+	command browser brave	
+	command lock "slock"
+
+
+
+## Tiling
+	#bind 4S-h 	htile
+	#bind 4S-v	vtile

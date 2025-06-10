@@ -49,6 +49,7 @@ display_menu() {
 # Main function
 main() {
     notify-send "sistem keluar"
+    pkill mpd
     
     # Unmount and power off devices
     sudo udisksctl unmount -b /dev/sdb1
@@ -97,7 +98,7 @@ main() {
             s|3) 
                 echo "shutting down in 5 seconds"
                 mpv --screen=1 --fs --fs-screen=1 ~/wollpeper/exit.mp4
-                sudo shutdown -h now; 
+                sudo poweroff;
                 break;;
             w|4) 
                 hyprctl dispatch exit
@@ -114,7 +115,7 @@ main() {
                     2) 
                         echo "shutting down in 5 seconds"
                         mpv --screen=1 --fs --fs-screen=1 ~/wollpeper/exit.mp4
-                        sudo shutdown -h now;
+                        sudo poweroff;
                         break;;
                     3)
                         hyprctl dispatch exit

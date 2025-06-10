@@ -1,0 +1,37 @@
+lsblk
+neofetch
+ls
+btop
+ls
+cd balls
+ls
+cd Downloads/
+ls
+chafa `06-03_15-53-09_Shipping label.pdf`
+chafa *.jpg
+ls
+lsblk
+neofetch
+pfetch
+exit
+ls
+pfetch
+cd Downloads/
+ls
+chafa *.jpg
+ls
+lsblk
+dysk
+lsblk
+neofetch
+fastfetch
+ls -laht
+dysk
+cd shigure
+ls
+cd
+cd shigure
+ls
+z shigure
+ls
+exit
