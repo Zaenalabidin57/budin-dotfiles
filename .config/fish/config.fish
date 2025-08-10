@@ -1,9 +1,25 @@
+set -gx PATH $PATH /home/shigure/.cargo/bin
+
+set -gx BW_SESSION "ek37z6ejsm2xftSo3NLiQNrbi/9LR1wv9HWcDOSC2TnU/XMYF+2PPBrWfU+McivIk753883RGDKaEnt6P1lzpQ=="
+
+
 if status is-interactive
+    # Use BusyBox instead of GNU coreutils
+   # alias ls 'busybox ls --color=auto'
+   # alias grep 'busybox grep --color=auto'
+   # alias rm 'busybox rm -i'
+   # alias mkdir 'busybox mkdir'
+   # alias rmdir 'busybox rmdir'
+   # alias cat 'busybox cat'
+   # alias ps 'busybox ps'
+   # alias df 'busybox df -h'
+   # alias du 'busybox du -h'
+   # alias top 'busybox top'
+
     # Commands to run in interactive sessions can go here
-    abbr --add cd z
-    abbr --add vim nvim
-    abbr --add neofetch pfetch
-    abbr --add uwe 'sshfs server@192.168.100.69:/home/server/ uwe'
+    #abbr --add vim nvim
+    #abbr --add neofetch nerdfetch
+    abbr --add uwe 'sshfs server@192.168.100.69:/ uwe'
     abbr --add axis 'sudo sysctl -w net.ipv4.ip_default_ttl=65 && sudo sysctl -w net.ipv6.conf.all.hop_limit=65'
     abbr --add empd "mpd;mpd-mpris &; disown; rmpc"
     # zoxide init fish | source
@@ -13,30 +29,102 @@ if status is-interactive
     abbr --add sumake sudo make clean install
     abbr --add ymp3 yt-mp3
     abbr --add ymp4 yt-mp4
+    abbr --add ygif yt-gif
     abbr --add supa sudo pacman
-    abbr --add windog 'sudo systemctl start libvirtd; sudo virsh net-start default;virt-manager &; disown'
+    abbr --add windog 'sudo rc-service libvirtd start;sleep 2; sudo virsh net-start default;virt-manager &; disown'
 
     abbr --add  shgiure shigure
-    abbr --add winevn "WINEPREFIX=/home/shigure/gaem/winevn wine"
+    abbr --add winevn "WINEPREFIX=/home/shigure/.adobo/Adobe-Photoshop/ wine"
+    abbr --add winegamij "WINEPREFIX=/home/shigure/gaem/.gamij wine"
 
+
+    # singkatan openrc
+    abbr --add rs "rc-service"
+    abbr --add ru "rc-update"
+    abbr --add rss "rc-status"
+    abbr --add rsu "rc-service --user"
+    abbr --add ruu "rc-update --user"
 end
+
+
+function bwlist
+    bw list items --search $argv | jq --tab
+end
+
+function cp
+advcp -gR $argv
+end
+function mv
+advmv -g $argv
+end
+function cd
+  z $argv
+  ls
+end
+
 
 function mkcd
     mkdir $argv[1]
     cd $argv[1]
 end
 
+function thunar
+  better-swallow /usr/bin/thunar $argv
+end
+
+function mpv
+  better-swallow /usr/bin/mpv $argv
+end
+
+function wine
+  better-swallow /usr/bin/wine $argv
+end
+
 function yt-mp3
-    yt-dlp -x --audio-format mp3 --audio-quality 0 -o '~/Music/yutub/%(title)s.%(ext)s' $argv
+    yt-dlp --cookies-from-browser firefox  -x --audio-format mp3 --audio-quality 0 -o '~/Music/yutub/%(title)s.%(ext)s' $argv
 end
 
 function yt-mp4
-  yt-dlp --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/%(title)s.%(ext)s' $argv
+  yt-dlp  --cookies-from-browser firefox --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/%(title)s.%(ext)s' $argv
   #  yt-dlp --format 'bv*+ba[ext=webm][acodec=vorbis]/b[ext=webm]' --prefer-ffmpeg -o '~/Videos/yt/%(title)s.%(ext)s' $argv
 end
 
+
+function yt-gif
+  # 1. Download the video using the provided URL ($argv)
+  yt-dlp  --cookies-from-browser firefox --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/temp/%(title)s.%(ext)s' $argv
+
+  # 2. Stop if the download failed
+  if test $status -ne 0
+    echo "Error: yt-dlp failed to download the video."
+    return 1
+  end
+
+  # 3. Get the filename of the video that was just downloaded (the newest one)
+  set latest_video (ls -t "$HOME/Videos/yt/temp/" | head -n 1)
+
+ # Check that a file was actually found
+  if test -z "$latest_video"
+    echo "Error: Could not find a downloaded video in the temp folder."
+    return 1
+  end
+
+  # 4. Remove the old extension to get the base name
+  set base_name (string split -r -m 1 '.' "$latest_video")[1]
+
+  # 5. Run ffmpeg using $HOME for reliable path expansion
+  echo "Converting '$latest_video' to a GIF..."
+  ffmpeg -i "$HOME/Videos/yt/temp/$latest_video" "$HOME/Videos/yt/gifs/$base_name.gif"
+
+  # 6. Remove the temporary video
+  rm -f "$HOME/Videos/yt/temp/*"
+
+end
+
 function fish_greeting
-  pfetch
+  #fastfetch
+  #nerdfetch
+  chafa ~/.config/fastfetch/uwaahh.png
   #   chafa /home/shigure/Pictures/mitafull.jpg
   #chafa /home/shigure/.config/fastfetch/fish4.png
   #cat /home/shigure/Shrek-Script.txt
@@ -65,11 +153,16 @@ if test -e "$HOME/.nix-profile/share/fish/site-functions"
   status --is-interactive; and source "$HOME/.nix-profile/etc/profile.d/nix.fish"
 end
 
-#if status is-login
-#   if test -z "$DISPLAY" -a (tty) = /dev/tty1
-#      exec startx -- -keeptty
-#   end
-#end
+if status is-login
+   if test -z "$DISPLAY" -a (tty) = /dev/tty1
+      exec dbus-run-session mango
+     #exec dbus-run-session sway
+     #exec dbus-run-session startx --keeptty
+     #exec run_dwl
+     #exec dbus-run-session niri --session
+     #exec dbus-run-session labwc
+   end
+end
 
 
 if set -q CONTAINER_ID
@@ -107,91 +200,9 @@ end
 #  exec sh -c /home/shigure/.config/scripts/abodindwl/run_dwl.sh
 #end
 
-function yt-select
-    # Check if a URL is provided
-    if test -z "$argv[1]"
-        echo "Usage: yt-select <video_url>"
-        return 1
-    end
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
 
-    set -l url "$argv[1]"
-    set -l output_base_dir "~/Videos/yt"
-
-    set -l temp_output_file (mktemp)
-    yt-dlp -F "$url" >"$temp_output_file" 2>&1
-    set -l ytdlp_status $status
-    set -l ytdlp_full_output (cat "$temp_output_file")
-    rm "$temp_output_file"
-
-    if test $ytdlp_status -ne 0 && not string match -q -- "*ID EXT RESOLUTION*" "$ytdlp_full_output"
-        echo "Error: yt-dlp failed to list formats or video not found."
-        echo -e "\n----- yt-dlp output -----\n$ytdlp_full_output\n----------------------"
-        return 1
-    end
-
-    # Try to isolate the actual format table, starting from the "ID EXT RESOLUTION" header
-    set -l table_header_pattern "^ID\s+EXT\s+RESOLUTION"
-    # Use sed to get text from the header pattern to the end of the output
-    # This helps skip any warning messages before the actual table.
-    set -l format_table_text (echo "$ytdlp_full_output" | sed -n "/$table_header_pattern/,\$p")
-
-    if test -z "$format_table_text"
-        echo "Could not find the start of the format table (header starting with 'ID EXT RESOLUTION') in yt-dlp output."
-        echo -e "\n----- yt-dlp output -----\n$ytdlp_full_output\n----------------------"
-        return 1
-    end
-
-    # Extract the header line from the isolated table text
-    set -l header_line (echo "$format_table_text" | string match -r -- $table_header_pattern | head -n 1)
-
-    # Extract the actual format lines (those starting with a number - the format ID)
-    # from the isolated table text. Allow for optional leading spaces.
-    set -l format_lines (echo "$format_table_text" | string match -ra "^\s*\d+\s+.*")
-
-    if test -z "$format_lines"
-        echo "Found the format table header, but could not parse any actual format lines (lines starting with a number)."
-        echo -e "\n----- Isolated table text used for parsing -----\n$format_table_text\n----------------------"
-        echo -e "\n----- Full yt-dlp output for context -----\n$ytdlp_full_output\n----------------------"
-        return 1
-    end
-
-    set -l choices_string
-    set -l num_header_lines 0
-    if test -n "$header_line[1]"
-        set choices_string "$header_line[1]\n"
-        set num_header_lines 1
-    end
-    set choices_string "$choices_string"(string join "\n" $format_lines)
-
-    set selected_line (echo -e "$choices_string" | fzf --height 60% --layout reverse --border \
-        --prompt="Select Format> " --header-lines=$num_header_lines \
-        --ansi)
-
-    if test $status -ne 0 || test -z "$selected_line"
-        echo "No format selected."
-        return 1
-    end
-
-    set format_code (echo "$selected_line" | string trim | string split " " -m 1)[1]
-
-    if test -z "$format_code"
-        echo "Could not parse format code from selection: '$selected_line'"
-        return 1
-    end
-
-    echo "Selected format code: $format_code"
-    set -l target_dir (eval echo $output_base_dir)
-    set -l output_template "$target_dir/%(title)s [%(id)s].%(ext)s"
-    echo "Downloading to: $output_template"
-    mkdir -p "$target_dir"
-
-    yt-dlp --progress -f "$format_code" -o "$output_template" "$url"
-
-    if test $status -eq 0
-        echo "Download complete!"
-    else
-        echo "Download failed."
-        return 1
-    end
-end
-
+# opencode
+fish_add_path /home/shigure/.opencode/bin

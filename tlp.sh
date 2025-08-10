@@ -13,7 +13,7 @@ sudo cp /etc/tlp.conf /etc/tlp.conf.bak
 sudo sed -i "s/CPU_BOOST_ON_AC=.*/CPU_BOOST_ON_AC=$NEW_STATE/" /etc/tlp.conf
 
 # Restart tlp service to apply changes
-sudo systemctl restart tlp.service
+sudo rc-service tlp restart
 
 if [[ $NEW_STATE -eq 1 ]]; then
   echo "CPU boost on AC enabled in /etc/tlp.conf"

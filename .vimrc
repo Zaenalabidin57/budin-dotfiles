@@ -64,7 +64,7 @@ set ts=4 sw=4
 
 " config vimwiki
 " let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
-let g:vimwiki_list = [{'path': '/home/shigure/Yandex.Disk/Arch/Docomento/kisah_budin/'}]
+let g:vimwiki_list = [{'path': '/home/shigure/yandex/alice/my_kisah'}]
 " config
 let skip_defaults_vim=1
 let &fillchars ..= ',eob: '

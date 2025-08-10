@@ -3,8 +3,6 @@
 # Define the screenshot directory
 screenshot_dir="$HOME/Pictures/Screenshots"
 
-# Ensure the directory exists
-mkdir -p "$screenshot_dir"
 
 # Generate a timestamp for the filename
 timestamp=$(date +%Y%m%d_%H%M%S)

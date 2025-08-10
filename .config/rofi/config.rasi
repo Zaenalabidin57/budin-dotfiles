@@ -1,10 +1,10 @@
 configuration{
     modi: "run,drun,window";
-    lines: 5;
+    lines: 10;
     font: "AbudinCode 12";
     show-icons: true;
     icon-theme: "Paper Mono";
-    terminal: "st";
+    terminal: "foot";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;
@@ -61,7 +61,7 @@ listview {
     border: 0px 0px 0px;
     padding: 6px 0px 0px;
     margin: 10px 0px 0px 20px;
-    columns: 2;
+    columns: 1;
     background-color: @bg-col;
 }
 

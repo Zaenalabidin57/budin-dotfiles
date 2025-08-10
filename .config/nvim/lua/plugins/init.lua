@@ -577,4 +577,19 @@ return {
   {
     "ndonfris/fish-lsp",
   },
+  {
+    'vimwiki/vimwiki',
+  init = function()
+    vim.g.vimwiki_list = {{
+      path = "~/.vimwiki",
+      syntax = 'markdown',
+      ext = '.md',
+    }}
+  end,
+   keys = {
+    { "<leader>ww", "<cmd>VimwikiIndex<cr>", desc = "Open Vimwiki Index" },
+    { "<leader>wt", "<cmd>VimwikiTabIndex<cr>", desc = "Open Vimwiki Index in a new tab" },
+    { "<leader>ws", "<cmd>VimwikiSearch<cr>", desc = "Search Vimwiki" },
+  },
+  },
 }

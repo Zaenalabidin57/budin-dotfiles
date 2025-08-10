@@ -65,16 +65,16 @@
 # CPUStatusClassHint="top.XTerm"
 
 #  Combine all CPUs to one.
-# CPUStatusCombine=1 # 0/1
+CPUStatusCombine=1 # 0/1
 
 #  Command to run on CPU status.
-# CPUStatusCommand="xterm -name top -title Process\ Status -e top"
+CPUStatusCommand="xterm -name top -title Process\ Status -e top"
 
 #  Show ACPI temperature in CPU status tool tip.
 # CPUStatusShowAcpiTemp=1 # 0/1
 
 #  Show ACPI temperature in CPU status bar.
-# CPUStatusShowAcpiTempInGraph=0 # 0/1
+CPUStatusShowAcpiTempInGraph=1 # 0/1
 
 #  Show CPU frequency in CPU status tool tip.
 # CPUStatusShowCpuFreq=1 # 0/1
@@ -101,7 +101,7 @@
 # ClickMotionDistance=4 # [0-32]
 
 #  Focus windows by clicking.
-# ClickToFocus=1 # 0/1
+ ClickToFocus=1 # 0/1
 
 #  Allow mouse actions on client windows (buggy with some programs)
 # ClientWindowMouseActions=1 # 0/1
@@ -113,7 +113,7 @@
 # ClockCommand="xclock -name icewm -title Clock"
 
 #  Confirm logout.
-# ConfirmLogout=1 # 0/1
+ ConfirmLogout=0 # 0/1
 
 #  Consider border frames when maximizing horizontally.
 # ConsiderHBorder=0 # 0/1
@@ -200,13 +200,13 @@
 # GrabRootWindow=1 # 0/1
 
 #  Command to hibernate the system.
-# HibernateCommand="test -e /run/systemd/system && systemctl hibernate || loginctl hibernate"
+HibernateCommand="test -e /run/systemd/system && systemctl hibernate || loginctl hibernate"
 
 #  Hide window borders if window is maximized.
-# HideBordersMaximized=0 # 0/1
+HideBordersMaximized=1 # 0/1
 
 #  Hide title bar when maximized.
-# HideTitleBarWhenMaximized=0 # 0/1
+HideTitleBarWhenMaximized=1 # 0/1
 
 #  Workspace switches by moving mouse to left/right screen edge.
 # HorizontalEdgeSwitch=0 # 0/1

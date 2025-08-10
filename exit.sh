@@ -31,11 +31,11 @@ display_menu() {
     
     # Menu items
     tput cup 4 $(( (cols - 20) / 2 ))
-    echo "${selected[0]}› r. Reboot"
+    echo "${selected[0]}› s. shutdown"
     tput cup 5 $(( (cols - 20) / 2 ))
     echo "${selected[1]}› p. Poweroff"
     tput cup 6 $(( (cols - 20) / 2 ))
-    echo "${selected[2]}› s. Shutdown"
+    echo "${selected[2]}› r. reboot"
     tput cup 7 $(( (cols - 20) / 2 ))
     echo "${selected[3]}› w. Masuk ke SDDM"
     tput cup 8 $(( (cols - 20) / 2 ))
@@ -93,37 +93,37 @@ main() {
         
         # Handle selection
         case $key in
-            r|1) sudo reboot; break;;
-            p|2) swaylock; break;;
-            s|3) 
+            s|1) 
                 echo "shutting down in 5 seconds"
                 mpv --screen=1 --fs --fs-screen=1 ~/wollpeper/exit.mp4
                 sudo poweroff;
                 break;;
+            p|2) swaylock; break;;
+            r|3) sudo reboot; break;;
             w|4) 
                 hyprctl dispatch exit
                 pkill Hypr; 
                 break;;
             h|5) 
                 echo "hibernotting"
-                systemctl hibernate; 
+                loginctl hibernate; 
                 break;;
             "") 
                 case $current in
-                    0) sudo reboot; break;;
-                    1) swaylock; break;;
-                    2) 
+                    0) 
                         echo "shutting down in 5 seconds"
                         mpv --screen=1 --fs --fs-screen=1 ~/wollpeper/exit.mp4
                         sudo poweroff;
                         break;;
+                    1) swaylock; break;;
+                    2) sudo reboot; break;;
                     3)
                         hyprctl dispatch exit
                         pkill Hypr;
                         break;;
                     4)
                         echo "hibernotting"
-                        systemctl hibernate;
+                        loginctl hibernate;
                         break;;
                 esac;;
             q) break;;

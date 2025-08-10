@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+description="Unmounts and powers off specified block devices on shutdown"
+
+export XDG_RUNTIME_DIR=/run/user/1000
+
+depend() {
+    keyword -prefix
+    need dbus
+}
+
+start() {
+    ebegin "Unmounting and powering off disks"
+    udisksctl unmount -b /dev/sdb1
+    udisksctl power-off -b /dev/sdb
+    udisksctl unmount -b /dev/sda1
+    udisksctl power-off -b /dev/sda
+    udisksctl unmount -b /dev/disk/by-id/usb-JMicron_Generic_0123456789ABCDEF-0:0-part1
+    udisksctl power-off -b /dev/disk/by-id/usb-JMicron_Generic_0123456789ABCDEF-0:0
+    eend $?
+}
+

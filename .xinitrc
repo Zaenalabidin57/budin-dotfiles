@@ -1,7 +1,12 @@
 #!/bin/sh
-#exec ~/.config/scripts/abodindwm/run_dwm.sh
+exec ~/.config/scripts/abodindwm/run_dwm.sh
+#exec dbus-run-session icewm-session
+#exec ~/.config/scripts/abodinrwm/run_rwm.sh
+#exec dbus-run-session rwm
 #exec ~/shigure/dinfwm/autostart.sh
-exec chadwm
+#exec chadwm
+#exec dbus-run-session openbox
+#exec dbus-run-session i3
 #exec ~/.config/scripts/sxwm/run_sxwm.sh
 #exec dbus-run-session chadwm
 #exec sxwm

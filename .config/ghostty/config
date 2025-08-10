@@ -3,7 +3,7 @@ font-family = AbudinCode
 #
 #font-family = Sans Forgetica
 font-style = Regular
-font-size = 12
+font-size = 10
 
 
 #set ke free monoj
@@ -20,8 +20,8 @@ adjust-underline-thickness = -60%
 window-decoration = none
 
 # background opacity
-#background-opacity = 0.8
-#background-blur = true
+background-opacity = 0.8
+background-blur = true
 
 cursor-style = block
 cursor-style-blink = false
