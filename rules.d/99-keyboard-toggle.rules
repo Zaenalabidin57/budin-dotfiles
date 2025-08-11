@@ -1,0 +1,7 @@
+# Rule to disable the built-in keyboard when the Corne (idVendor=4653) is plugged in
+ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="4653", RUN+="/bin/sh -c 'echo 1 > /sys/devices/platform/i8042/serio0/input/input2/inhibited'"
+
+# Rule to re-enable the built-in keyboard when the Corne is unplugged
+# This rule is more general to better catch the remove event
+ACTION=="remove", ENV{ID_VENDOR_ID}=="4653", RUN+="/bin/sh -c 'echo 0 > /sys/devices/platform/i8042/serio0/input/input2/inhibited'"
+
