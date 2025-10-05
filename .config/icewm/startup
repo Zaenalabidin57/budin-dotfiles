@@ -6,13 +6,19 @@ xbacklight -set 10 &
 xrandr --output HDMI-1 --left-of eDP-1
 #nitrogen --restore
 #feh --bg-fill ~/Pictures/wollpeper/chne.jpeg &
-feh --bg-fill ~/Pictures/wollpeper/saygex.jpg &
+#icewmbg ~/Pictures/wollpeper/icewm2.jpg
+icewmbg -f -e -i ~/Pictures/wollpeper/icewm/01.jpg ~/Pictures/wollpeper/icewm/02.jpg ~/Pictures/wollpeper/icewm/03.jpg ~/Pictures/wollpeper/icewm/04.jpg ~/Pictures/wollpeper/icewm/05.jpg
+#feh --bg-fill ~/Pictures/wollpeper/saygex.jpg &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 xset r rate 200 50 &
 dunst &
-fastcompmgr &
+#fastcompmgr &
+picom &
 /usr/bin/kdeconnectd &
 /usr/bin/kdeconnect-indicator &
 clipcatd &
 xss-lock -- sh -c "slock" &
 flameshot &
+udisksctl mount -b /dev/disk/by-id/usb-JMicron_Generic_0123456789ABCDEF-0:0-part1 -t exfat /run/media/shigure/YEET &
+yandex-disk start &
+

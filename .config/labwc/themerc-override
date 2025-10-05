@@ -16,19 +16,19 @@ window.titlebar.padding.width: 0
 window.titlebar.padding.height: 0
 
 # window border
-window.active.border.color: #8aadf4
-window.inactive.border.color: #6e738d
+window.active.border.color: #C0C0C0
+window.inactive.border.color: #808080
 
 # ToggleKeybinds status indicator
 window.active.indicator.toggled-keybind.color: #ed8796
 
 # window titlebar background
-window.active.title.bg.color: #24273a
-window.inactive.title.bg.color: #1e2030
+window.active.title.bg.color: #000080
+window.inactive.title.bg.color: #808080
 
 # window titlebar text
-window.active.label.text.color: #cad3f5
-window.inactive.label.text.color: #a5adcb
+window.active.label.text.color: #FFFFFF
+window.inactive.label.text.color: #C0C0C0
 window.label.text.justify: center
 
 # window button width and spacing
@@ -40,14 +40,16 @@ window.button.spacing: 0
 window.button.hover.bg.corner-radius: 0
 
 # window buttons
-window.active.button.unpressed.image.color: #cad3f5
-window.inactive.button.unpressed.image.color: #a5adcb
+window.active.button.close.unpressed.image.color: #FFFFFF
+window.active.button.max.unpressed.image.color: #FFFFFF
+window.active.button.iconify.unpressed.image.color: #FFFFFF
+window.inactive.button.unpressed.image.color: #808080
 
 # window drop-shadows
-window.active.shadow.size: 60
-window.inactive.shadow.size: 40
-window.active.shadow.color: #18192660
-window.inactive.shadow.color: #18192640
+window.active.shadow.size: 0
+window.inactive.shadow.size: 0
+window.active.shadow.color: #00000000
+window.inactive.shadow.color: #00000000
 
 # Note that "menu", "iconify", "max", "close" buttons colors can be defined
 # individually by inserting the type after the button node, for example:
@@ -60,23 +62,23 @@ menu.overlap.y: 0
 menu.width.min: 20
 menu.width.max: 200
 menu.border.width: 1
-menu.border.color: #aaaaaa
-menu.items.bg.color: #fcfbfa
+menu.border.color: #000000
+menu.items.bg.color: #C0C0C0
 menu.items.text.color: #000000
-menu.items.active.bg.color: #e1dedb
-menu.items.active.text.color: #000000
+menu.items.active.bg.color: #000080
+menu.items.active.text.color: #FFFFFF
 menu.items.padding.x: 7
 menu.items.padding.y: 4
 menu.separator.width: 1
 menu.separator.padding.width: 6
 menu.separator.padding.height: 3
-menu.separator.color: #888888
-menu.title.bg.color: #589bda
-menu.title.text.color: #ffffff
+menu.separator.color: #808080
+menu.title.bg.color: #000080
+menu.title.text.color: #FFFFFF
 menu.title.text.justify: Center
 
 # on screen display (window-cycle dialog)
-osd.bg.color: #e1dedb
+osd.bg.color: #C0C0C0
 osd.border.color: #000000
 osd.border.width: 5
 osd.label.text.color: #000000

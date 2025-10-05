@@ -1,10 +1,10 @@
 configuration{
     modi: "run,drun,window";
-    lines: 10;
+    lines: 20;
     font: "AbudinCode 12";
     show-icons: true;
     icon-theme: "Paper Mono";
-    terminal: "foot";
+    terminal: "st";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;

@@ -1,0 +1,98 @@
+ThemeName="Hatsune Miku-Dark"
+ThemeAuthor="live777"
+License="GPL"
+ThemeVersion="0.1"
+ThemeDescription="hatsune miku inspired theme"
+Look=flat
+Gradients="menubg.xpm menusel.xpm switchbg.xpm taskbarbg.xpm dialogbg.xpm taskbuttonbg.xpm taskbuttonactive.xpm taskbuttonminimized.xpm buttonA.xpm buttonI.xpm toolbuttonbg.xpm workspacebuttonbg.xpm workspacebuttonactive.xpm menubg.xpm taskbuttonactive.xpm menusel.xpm titleIB.xpm titleAB.xpm titleAS.xpm titleIS.xpm"
+RolloverButtonsSupported=1
+TitleButtonsLeft=""
+TitleButtonsRight="xmi"
+TitleBarCentered=1
+TitleBarHeight=18
+BorderSizeX=1
+BorderSizeY=1
+CornerSizeX=0
+CornerSizeY=0
+DlgBorderSizeX=0
+DlgBorderSizeY=0
+ColorNormalTitleBarText="#BEC8D1"
+ColorActiveTitleBarText="#000000"
+ColorNormalButton="#373B3E"
+ColorNormalButtonText="#ffffff"
+ColorActiveButton="#31E6F0"
+ColorActiveButtonText="#FFFFFF"
+ColorActiveBorder="#F3008E"
+ColorNormalBorder="#F3008E"
+ColorDialog="#373B3E"
+ColorListBox="#373B3E"
+ColorListBoxText="#ffffff"
+ColorListBoxSelection="#31E6F0"
+ColorListBoxSelectionText="#ffffff"
+ColorScrollBar="#373B3E"
+ColorScrollBarArrow="#373B3E"
+ColorScrollBarSlider="#31E6F0"
+ColorLabel="#373B3E"
+ColorLabelText="#ffffff"
+ColorNormalMenu="#373B3E"
+ColorActiveMenuItem="#31E6F0"
+ColorNormalMenuItemText="#ffffff"
+ColorActiveMenuItemText="#000000"
+ColorDisabledMenuItemText="#808080"
+ColorMoveSizeStatus="#000000"
+ColorMoveSizeStatusText="#FFFFFF"
+ColorDefaultTaskBar="#000000"
+ColorNormalTaskBarApp="#000000"
+ColorNormalTaskBarAppText="#ffffff"
+ColorInvisibleTaskBarApp="#000000"
+ColorInvisibleTaskBarAppText="#ffffff"
+ColorActiveTaskBarApp="#000000"
+ColorActiveTaskBarAppText="#ffffff"
+ColorMinimizedTaskBarApp="#000000"
+ColorMinimizedTaskBarAppText="#ffffff"
+ColorNormalWorkspaceButton="#00aaaa"
+ColorActiveWorkspaceButton="#F3008E"
+ColorInput="#000000"
+ColorInputText="#ffffff"
+ColorClock=""
+ColorClockText=""
+ColorCPUStatusUser="#31E6F0"
+ColorCPUStatusSystem="#31E6F0"
+ColorCPUStatusNice="#BEC8D1"
+ColorCPUStatusIdle="#000000"
+ColorNetSend="#00aaaa"
+ColorNetReceive="#BEC8D1"
+ColorNetIdle="#000000"
+ColorToolTip="#000000"
+ColorToolTipText="#FFFFFF"
+ColorMoveSizeStatus="#252525"
+ColorMoveSizeStatusText="#31E6F0"
+ColorQuickSwitch="#000000"
+ColorQuickSwitchText="#ffffff"
+# Font Specification
+TitleFontNameXft		=	sans:size=10:bold
+MenuFontNameXft			=	sans:size=11
+MinimizedWindowFontNameXft	=	sans:size=10:bold
+ActiveButtonFontNameXft		=	sans:size=11:bold
+NormalButtonFontNameXft		=	sans:size=11
+ToolButtonFontNameXft		=	sans:size=11
+NormalWorkspaceFontNameXft	=	sans:size=11
+ActiveWorkspaceFontNameXft	=	sans:size=11
+QuickSwitchFontNameXft		=	sans:size=11
+ListBoxFontNameXft		=	sans:size=11
+StatusFontNameXft		=	sans:size=11
+ToolTipFontNameXft		=	sans:size=11
+ActiveTaskBarFontNameXft	=	sans:size=11
+NormalTaskBarFontNameXft	=	sans:size=11
+ClockFontNameXft		=	sans:size=11
+InputFontNameXft		=	sans:size=11
+TaskBarClockLeds=1
+MenuIconSize=24		        # Menu
+SmallIconSize=24 			# Taskbar & Titlebar. Taskbar height = height of linux.xpm. Titlebar height = TitleBarHeight in *.theme
+LargeIconSize=32			# Quickswitch window
+HugeIconSize=48				# ?  Cannot identify what it applies to
+ShowMenuButtonIcon=0			# Show application icon on menuButton
+#######################################Desktop#######################################
+DesktopBackgroundImage="hatsune-miku.png"
+DesktopBackgroundColor=""
+DesktopBackgroundCenter=1

@@ -7,8 +7,8 @@ xrdb merge ~/.Xresources &
 xbacklight -set 10 &
 xrandr --output HDMI-1 --left-of eDP-1
 xrandr --output eDP --set TearFree on
-#nitrogen --restore
-feh --bg-fill ~/Pictures/wollpeper/saygex.jpg &
+nitrogen --restore
+#feh --bg-fill ~/Pictures/wollpeper/saygex.jpg &
 #feh --bg-fill ~/Pictures/wollpeper/chne.jpeg &
 #feh --bg-fill ~/Pictures/wollpeper/chieh.jpg &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -34,4 +34,4 @@ udisksctl mount -b /dev/disk/by-id/usb-JMicron_Generic_0123456789ABCDEF-0:0-part
 
 sh ~/.config/scripts/abodindwm/bar_dwm.sh &
 #chadwm
-while type chadwm >/dev/null; do chadwm && continue || break; done
+while type chadwm >/dev/null; do dbus-run-session chadwm && continue || break; done

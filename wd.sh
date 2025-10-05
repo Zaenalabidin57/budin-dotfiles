@@ -15,7 +15,7 @@ set_resolution() {
   waydroid prop set persist.waydroid.width "$1"
   waydroid prop set persist.waydroid.height "$2"
   echo "Setting resolution to ${1}x${2}"
-  sudo systemctl restart waydroid-container
+  sudo rc-service waydroid-container-manager restart
 }
 
 # Check if the current resolution is mobile

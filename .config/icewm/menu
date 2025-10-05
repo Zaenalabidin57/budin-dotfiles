@@ -3,13 +3,15 @@
 # Place your variants in /etc/icewm or in $HOME/.icewm since
 # modifications to this file will be overwritten when you reinstall icewm.
 #
-prog "xterm" xterm xterm
+prog "ST" xterm st
 prog urxvt xterm urxvt -bg black -cr green -fg white -C -sl 500
 prog gedit fte gedit
 prog NEdit nedit nedit
 prog Firefox firefox firefox
-prog Hexchat xchat hexchat
-prog Gimp gimp gimp
+prog Qutebrowser qutebrowser qutebrowser
+prog "Word" libreoffice-writer libreoffice --writer
+prog "Excel" libreoffice-calc libreoffice --calc
+prog "PowerPoint" libreoffice-impress libreoffice --impress
 includeprog icewm-menu-fdo --sep-before --no-sep-others
 menufile Programs folder programs
 menufile Tool_bar folder toolbar

@@ -8,7 +8,7 @@ bash ~/.config/scripts/abodindwl/wlranjeng.sh &
 gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh &
 waybar -c /home/shigure/.config/waybar/config_mao &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-/usr/lib/xdg-desktop-portal &
+/usr/lib/xdg-desktop-portal -r &
 /usr/lib/xdg-desktop-portal-wlr -r &
 kdeconnectd &
 kdeconnect-indicator &

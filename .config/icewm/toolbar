@@ -5,6 +5,4 @@
 #
 prog "xterm" utilities-terminal st
 prog "Web browser" web-browser xdg-open about:blank
-prog "Excel" office-calc libreoffice --calc
-prog "Word" office-writer libreoffice --writer
-
+prog "File manager" folder_32x32 thunar

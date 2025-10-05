@@ -18,7 +18,7 @@
   </core>
 
   <placement>
-    <policy>cascade</policy>
+    <policy>automatic</policy>
     <!--
       When <placement><policy> is "cascade", the offset for cascading new
       windows can be overwritten like this:
@@ -49,7 +49,7 @@
       <layout>icon:iconify,max,close</layout>
       <showTitle>yes</showTitle>
     </titlebar>
-    <cornerRadius>8</cornerRadius>
+    <cornerRadius>0</cornerRadius>
     <keepBorder>yes</keepBorder>
     <dropShadows>no</dropShadows>
     <font place="ActiveWindow">
@@ -105,16 +105,7 @@
     See "man 5 labwc-config" for details.
   -->
 
-    <windowSwitcher show="yes" preview="no" outlines="no" allWorkspaces="yes">
-      <fields>
-        <field content="workspace" width="5%" />
-        <field content="state" width="3%" />
-        <field content="type_short" width="3%" />
-        <field content="output" width="9%" />
-        <field content="identifier" width="30%" />
-        <field content="title" width="50%" />
-      </fields>
-    </windowSwitcher>
+    
 
   <!--
     custom format - (introduced in 0.7.2)
@@ -182,11 +173,11 @@
     <desktops>
       <popupTime>1000</popupTime>
       <names>
-        <name>Workspace 1</name>
-        <name>Workspace 2</name>
-        <name>Workspace 3</name>
-        <name>Workspace 4</name>
-        <name>Workspace 5</name>
+        <name>1</name>
+        <name>2</name>
+        <name>3</name>
+        <name>4</name>
+        <name>5</name>
       </names>
     </desktops>
 
@@ -268,15 +259,12 @@
     -->
     <layoutScope>global</layoutScope>
     <repeatRate>25</repeatRate>
-    <repeatDelay>600</repeatDelay>
+    <repeatDelay>200</repeatDelay>
     <keybind key="A-Tab">
       <action name="NextWindow" />
     </keybind>
     <keybind key="A-S-Tab">
       <action name="PreviousWindow" />
-    </keybind>
-    <keybind key="W-Return">
-      <action name="Execute" command="alacritty" />
     </keybind>
     <keybind key="A-F3">
       <action name="Execute" command="bemenu-run" />
@@ -349,10 +337,10 @@
       <action name="Execute" command="rofi -modi emoji -show emoji" />
     </keybind>
     <keybind key="W-Return">
-      <action name="Execute" command="ghostty" />
+      <action name="Execute" command="footclient" />
     </keybind>
     <keybind key="W-o">
-      <action name="Execute" command="zen-browser" />
+      <action name="Execute" command="qutebrowser" />
     </keybind>
     <keybind key="W-n">
       <action name="Execute" command="thunar" />
@@ -557,21 +545,21 @@
   <mouse>
 
     <!-- time is in ms -->
-    <doubleClickTime>500</doubleClickTime>
+    <doubleClickTime>200</doubleClickTime>
 
     <context name="Frame">
-      <mousebind button="A-Left" action="Press">
+      <mousebind button="W-Left" action="Press">
         <action name="Focus" />
         <action name="Raise" />
       </mousebind>
-      <mousebind button="A-Left" action="Drag">
+      <mousebind button="W-Left" action="Drag">
         <action name="Move" />
       </mousebind>
-      <mousebind button="A-Right" action="Press">
+      <mousebind button="W-Right" action="Press">
         <action name="Focus" />
         <action name="Raise" />
       </mousebind>
-      <mousebind button="A-Right" action="Drag">
+      <mousebind button="W-Right" action="Drag">
         <action name="Resize" />
       </mousebind>
     </context>

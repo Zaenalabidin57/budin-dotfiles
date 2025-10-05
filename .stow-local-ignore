@@ -1,1 +1,6 @@
 git
+.rules.d
+.stow-ignore
+.stow-ignore-extended
+.stow-ignore-global
+README.md

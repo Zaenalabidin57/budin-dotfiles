@@ -14,7 +14,8 @@ swaybg -i ~/Pictures/wollpeper/chne.jpeg >/dev/null 2>&1 &
 #kanshi >/dev/null 2>&1 &
 
 # Launch a panel such as yambar or waybar.
-waybar -c ~/.config/waybar/config_labwc >/dev/null 2>&1 &
+#waybar -c ~/.config/waybar/config_labwc >/dev/null 2>&1 &
+#sfwbar &
 conky --config=/home/shigure/.config/conky/conkyW.conf >/dev/null 2>&1 &
 
 # Enable notifications. Typically GNOME/KDE application notifications go
@@ -24,6 +25,7 @@ dunst >/dev/null 2>&1 &
 
 ~/.config/labwc/wlrajeng.sh &
 plank &
+foot -s &
 
 /usr/bin/kdeconnectd &
 /usr/bin/kdeconnect-indicator &
@@ -31,6 +33,10 @@ gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 wl-paste --watch cliphist store &
+
+yandex-disk start &
+
+udisksctl mount -b /dev/disk/by-id/usb-JMicron_Generic_0123456789ABCDEF-0:0-part1 -t exfat /run/media/shigure/YEET &
 # Lock screen after 5 minutes; turn off display after another 5 minutes.
 #
 # Note that in the context of idle system power management, it is *NOT* a good
@@ -38,6 +44,6 @@ wl-paste --watch cliphist store &
 # `wlr-randr --output <whatever> --off` because this re-arranges views
 # (since a837fef). Instead use a wlr-output-power-management client such as
 # https://git.sr.ht/~leon_plickat/wlopm
-swayidle -w \
-	timeout 500 'systemctl hibernate' \
-	before-sleep 'swaylock -f -c 000000' >/dev/null 2>&1 &
+#swayidle -w \
+#	timeout 500 'systemctl hibernate' \
+	#before-sleep 'swaylock -f -c 000000' >/dev/null 2>&1 &

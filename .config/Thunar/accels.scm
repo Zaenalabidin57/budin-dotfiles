@@ -68,6 +68,7 @@
 ; (gtk_accel_path "<Actions>/ThunarWindow/zoom-out" "<Primary>minus")
 ; (gtk_accel_path "<Actions>/ThunarWindow/remove-from-recent" "")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/open-with-other" "")
+; (gtk_accel_path "<Actions>/ThunarBookmarks/7eb9b40d015c2ff545e1d190772835d5" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/invert-selection" "<Primary><Shift>i")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/44bb0b8a668995962bce2fd59ba31ea1" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/view-side-pane-shortcuts" "<Primary>b")

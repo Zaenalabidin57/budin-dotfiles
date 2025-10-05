@@ -3,6 +3,8 @@ require "nvchad.options"
 require("telescope").load_extension "harpoon"
 require("telescope").load_extension 'zoxide'
 
+import = "nvchad.blink.lazyspec"
+
 if vim.g.neovide then
   vim.keymap.set('n', '<D-s>', ':w<CR>') -- Save
   vim.keymap.set('v', '<D-c>', '"+y') -- Copy

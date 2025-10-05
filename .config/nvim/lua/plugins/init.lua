@@ -581,7 +581,7 @@ return {
     'vimwiki/vimwiki',
   init = function()
     vim.g.vimwiki_list = {{
-      path = "~/.vimwiki",
+      path = "~/yandex/alice/my_kisah/",
       syntax = 'markdown',
       ext = '.md',
     }}

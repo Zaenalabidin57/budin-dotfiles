@@ -1,6 +1,8 @@
-set -gx PATH $PATH /home/shigure/.cargo/bin
+set -gx PATH $PATH /home/shigure/.cargo/bin /home/shigure/.config/composer/vendor/bin
 
 set -gx BW_SESSION "ek37z6ejsm2xftSo3NLiQNrbi/9LR1wv9HWcDOSC2TnU/XMYF+2PPBrWfU+McivIk753883RGDKaEnt6P1lzpQ=="
+
+set -gx EDITOR nvim
 
 
 if status is-interactive
@@ -20,7 +22,10 @@ if status is-interactive
     #abbr --add vim nvim
     #abbr --add neofetch nerdfetch
     abbr --add uwe 'sshfs server@192.168.100.69:/ uwe'
+    abbr --add eee 'exit'
     abbr --add axis 'sudo sysctl -w net.ipv4.ip_default_ttl=65 && sudo sysctl -w net.ipv6.conf.all.hop_limit=65'
+    abbr --add ccd cd
+    abbr --add japon "LC_ALL=ja_JP.UTF-8"
     abbr --add empd "mpd;mpd-mpris &; disown; rmpc"
     # zoxide init fish | source
     bind \cj 'nextd >/dev/null; commandline -f repaint'
@@ -36,6 +41,10 @@ if status is-interactive
     abbr --add  shgiure shigure
     abbr --add winevn "WINEPREFIX=/home/shigure/.adobo/Adobe-Photoshop/ wine"
     abbr --add winegamij "WINEPREFIX=/home/shigure/gaem/.gamij wine"
+
+    abbr --add umuj "PROTONPATH='/usr/share/steam/compatibilitytools.d/proton-ge-custom/' umu-run"
+
+    abbr --add boat "sudo rc-service docker start; setsid winboat"
 
 
     # singkatan openrc
@@ -62,37 +71,31 @@ function cd
   ls
 end
 
+function kirim
+      kdeconnect-cli -d cc33989fd1854142bbcda4707b505883 --share $argv
+end
 
 function mkcd
     mkdir $argv[1]
     cd $argv[1]
 end
 
-function thunar
-  better-swallow /usr/bin/thunar $argv
-end
-
-function mpv
-  better-swallow /usr/bin/mpv $argv
-end
-
-function wine
-  better-swallow /usr/bin/wine $argv
-end
-
 function yt-mp3
+  #yt-dlp --extractor-args "youtube:player_client=android,web" --cookies-from-browser firefox  -x --audio-format mp3 --audio-quality 0 -o '~/Music/yutub/%(title)s.%(ext)s' $argv
     yt-dlp --cookies-from-browser firefox  -x --audio-format mp3 --audio-quality 0 -o '~/Music/yutub/%(title)s.%(ext)s' $argv
 end
 
 function yt-mp4
-  yt-dlp  --cookies-from-browser firefox --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/%(title)s.%(ext)s' $argv
-  #  yt-dlp --format 'bv*+ba[ext=webm][acodec=vorbis]/b[ext=webm]' --prefer-ffmpeg -o '~/Videos/yt/%(title)s.%(ext)s' $argv
+  #yt-dlp --extractor-args "youtube:player_client=android,web" --cookies-from-browser firefox --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/%(title)s.%(ext)s'
+  yt-dlp --cookies-from-browser firefox --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/%(title)s.%(ext)s' $argv
+  #  yt-dlp --format 'bv*+ba[ext=webm][acodec=vorbis]/b[ext=webm]' --prefer-ffmpeg -o '~/Videos/yt/%(title)s.%(ext)s'
 end
 
 
 function yt-gif
   # 1. Download the video using the provided URL ($argv)
-  yt-dlp  --cookies-from-browser firefox --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/temp/%(title)s.%(ext)s' $argv
+  #yt-dlp --extractor-args "youtube:player_client=android,web" --cookies-from-browser firefox --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/temp/%(title)s.%(ext)s' $argv
+  yt-dlp --cookies-from-browser firefox --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/temp/%(title)s.%(ext)s' $argv
 
   # 2. Stop if the download failed
   if test $status -ne 0
@@ -124,16 +127,19 @@ end
 function fish_greeting
   #fastfetch
   #nerdfetch
-  chafa ~/.config/fastfetch/uwaahh.png
+  neofetch
+  #chafa ~/Pictures/artix.png
+  #chafa ~/.config/fastfetch/uwaahh.png
   #   chafa /home/shigure/Pictures/mitafull.jpg
   #chafa /home/shigure/.config/fastfetch/fish4.png
   #cat /home/shigure/Shrek-Script.txt
   #  echo -e "\033[34m _____ _     _
   #  / ____| |   (_)
   # | (___ | |__  _  __ _ _   _ _ __ ___
-  #  \___ \| '_ \| |/ _\` | | | | '__/ _ \\
+  #  \___ \| 
+  #_ \| |/ _` | | | | '__/ _ \ 
   #  ____) | | | | | (_| | |_| | | |  __/
-  # |_____/|_| |_|_|\\__, |\\__,_|_|  \\___|
+  # |_____/|_| |_|_|\__, |\__,_|_|  \___|
   #                  __/ |
   #                 |___/                \033[0m"
 end
@@ -155,12 +161,13 @@ end
 
 if status is-login
    if test -z "$DISPLAY" -a (tty) = /dev/tty1
-      exec dbus-run-session mango
+     #exec dbus-run-session mango
      #exec dbus-run-session sway
      #exec dbus-run-session startx --keeptty
      #exec run_dwl
+     #exec dbus-run-session dwl
      #exec dbus-run-session niri --session
-     #exec dbus-run-session labwc
+     exec dbus-run-session labwc
    end
 end
 
@@ -206,3 +213,16 @@ set --export PATH $BUN_INSTALL/bin $PATH
 
 # opencode
 fish_add_path /home/shigure/.opencode/bin
+
+# Syntax highlighting for system commands
+function lsblk
+    command lsblk $argv | bat --plain --language=sh
+end
+
+function free
+    command free $argv | bat --plain --language=sh
+end
+
+function df
+    command df $argv | bat --plain --language=sh
+end
