@@ -2,19 +2,15 @@ require("keyjump"):setup({
 	icon_fg = "#fda1a1",
 	first_key_fg = "#df6249",
     go_table = { -- `g` to open go menu(only global mode)
-		{ on = { "w" },       run = "cd ~/文档/WeChat_Data/home",       desc = "Go to weixin" },
 		{ on = { "n" },       run = "cd ~/_install",       desc = "Go to _install" },
 		{ on = { "h" },       run = "cd ~",             desc = "Go to home" },
 		{ on = { "c" },       run = "cd ~/.config",     desc = "Go to config" },
-		{ on = { "u" },       run = "cd /media/UUI/",     desc = "Go to Mobile disk" },
+		{ on = { "u" },       run = "cd ~/shigure",     desc = "Go to Mobile disk" },
 		{ on = { "d" },       run = "cd ~/down",   desc = "Go to downloads" },
-		{ on = { "t" },       run = "cd ~/tool/",          desc = "Go to tool" },
-		{ on = { "o" },       run = "cd ~/video",          desc = "Go to video" },
+		{ on = { "o" },       run = "cd ~/Videos",          desc = "Go to video" },
 		{ on = { "y" },       run = "cd ~/.config/yazi/",          desc = "Go to video" },
-		{ on = { "i" },       run = "cd ~/Images",          desc = "Go to image" },
+		{ on = { "i" },       run = "cd ~/Pictures",          desc = "Go to image" },
 		{ on = { "r" },       run = "cd /",          desc = "Go to /" },
-		{ on = { "j" },       run = "cd /home/wrq/deskenv/dev",          desc = "Go to dev" },
-		{ on = { "k" },       run = "cd /home/wrq/deskenv/master",       desc = "Go to master" },
 
 	}
 })
@@ -61,10 +57,10 @@ require("fg"):setup({
     default_action = "menu", -- nvim, jump
 })
 
-require("git"):setup()
+-- require("git"):setup()
 require("current-size"):setup({
-    equal_ignore = {"~","/","/home"}, -- full path match
-	-- sub_ignore = {"~/deskenv/master","~/deskenv/dev"} -- sub path match
+    equal_ignore = {"~","/","/home","/run/media/shigure/YEET/*","~/uwe/*"}, -- full path match
+    sub_ignore = {"/run/media/shigure/YEET/*","~/uwe/*"} -- sub path match
 })
 
 require("full-border"):setup()

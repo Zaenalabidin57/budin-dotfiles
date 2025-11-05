@@ -22,6 +22,7 @@ keymap = [
 	{ on = [ "u","D" ],	run = "plugin bookmarks -- delete_all", desc = "Delete all bookmarks" },
 	{ on = [ "u","l"], run = "plugin lastopen -- jump",         desc = "jump to last open file" },
 	{ on = [ "u","n"], run = "plugin mount",         desc = "mount manager" },
+	{ on = [ "u","z" ],     run = "plugin zoxide",            desc = "Jump to a directory using zoxide" },
 
 	{ on = [ "I" ], run = "plugin keyjump -- global", desc = "keyjump" },
 	{ on = [ "i" ], run = "plugin easyjump", desc = "easyjump" },
@@ -36,10 +37,8 @@ keymap = [
 	{ on = [ "z", "o" ], run = "linemode owner",       desc = "Set linemode to owner" },
 
 	{ on = [ "u","i" ],     run = "plugin cmd -- lazygit",              desc = "lazygit" },
-	{ on = [ "u","f" ], run = '''shell ' QT_QPA_PLATFORM=xcb ~/deskenv/archieve/qxdrag/qxdrag.py -x -e -b -p "$1"' --confirm''',desc="dragon x11" },
-	{ on = [ "u","w" ], run = '''shell ' QT_QPA_PLATFORM=wayland ~/deskenv/archieve/qxdrag/qxdrag.py -x -e -b -p "$1"' --confirm''',desc="dragon wayland" },
-	# { on = [ "u","w" ], run = '''shell ' GDK_BACKEND=wayland dragon -x -i -T "$1"' --confirm''',desc="dragon wayland" },
-	# { on = [ "u","r" ], run = '''shell ' GDK_BACKEND=x11 dragon -x -i -T "$1"' --confirm''',desc="dragon wayland" },
+	 { on = [ "u","w" ], run = '''shell ' GDK_BACKEND=wayland dragon -x -i -T "$1"' --confirm''',desc="dragon wayland" },
+	 { on = [ "u","r" ], run = '''shell ' GDK_BACKEND=x11 dragon -x -i -T "$1"' --confirm''',desc="dragon x11" },
 
 	{ on = [ "<Esc>" ], run = "escape", desc = "Exit visual mode, clear selected, or cancel search" },
 	{ on = [ "q" ],     run = "quit",   desc = "Exit the process" },
@@ -83,17 +82,18 @@ keymap = [
 	{ on = [ "<C-r>" ],   run = "toggle_all --state=none",            desc = "Inverse selection of all files" },
 
 	# Operation
-	{ on = [ "u","s"], 	run = '''shell "$SHELL" --block --confirm''', desc = "Open shell here" },
+	{ on = [ "Z"], 	run = '''shell "$SHELL" --block --confirm''', desc = "Open shell here" },
 	{ on = [ "o" ],         run = "open --interactive --hovered",     desc = "Open the currsor hovered files interactively" },
 	# { on = [ "O" ],   		run = "open",                   desc = "Open the selected files" },
 	# { on = [ "<Enter>" ],   run = "open --hovered",         desc = "Open the currsor hovered files" },
 	{ on = [ "<Enter>" ],   run = "plugin lastopen -- open",         desc = "Open the currsor hovered files" },
+	{ on = [ "X" ],         run = '''shell "$1" --block --confirm''', desc = "Execute script/file" },
 	{ on = [ "y" ],         run = "yank",                   desc = "Copy the selected files" },
 	{ on = [ "x" ],         run = "yank --cut",             desc = "Cut the selected files" },
 	{ on = [ "p" ],         run = "paste",                  desc = "Paste the files" },
 	{ on = [ "P" ],         run = "paste --force",          desc = "Paste the files (overwrite if the destination exists)" },
-	{ on = [ "k" ],         run = "paste --follow",         desc = "Paste the files (follow the symlinks)" },
-	{ on = [ "K" ],         run = "paste --follow --force", desc = "Paste the files (overwrite + follow)" },
+	#{ on = [ "k" ],         run = "paste --follow",         desc = "Paste the files (follow the symlinks)" },
+	#{ on = [ "K" ],         run = "paste --follow --force", desc = "Paste the files (overwrite + follow)" },
 	{ on = [ "d" ],         run = "remove",                 desc = "Move the files to the trash" },
 	{ on = [ "D" ],         run = "remove --permanently",   desc = "Permanently delete the files" },
 	{ on = [ "a" ],         run = "create",                 desc = "Create a file or directory (ends with / for directories)" },
@@ -105,7 +105,7 @@ keymap = [
 
 	# Filter & file
 	{ on = [ "f","t" ], 	run = "filter --smart", 			 desc = "Filter the files" },
-	# { on = [ "f","d" ],     run = "search fd",              desc = "Search files by name using fd" },
+	 { on = [ "f","d" ],     run = "search fd",              desc = "Search files by name using fd" },
 	{ on = [ "f","g" ],     run = "plugin fg -- rg",  desc = "find file by content (ripgrep match)" },
 	{ on = [ "f","G" ],     run = "plugin fg",              desc = "find file by content (fuzzy match)" },
 	{ on = [ "f","e" ],     run = "search none",            desc = "Cancel the ongoing search" },
@@ -165,9 +165,9 @@ keymap = [
 	{ on = [ "g", "y" ],       run = "cd /run/media/shigure/YEET",       desc= " go to YEET" },
 	{ on = [ "g", "s" ],       run = "cd /run/media/shigure/YEET/nitip/sigmund_freud",             desc = "go to sigmund" },
 	{ on = [ "g", "i" ],       run = "cd ~/.config",     desc = "Go to config" },
-	{ on = [ "g", "u" ],       run = "cd /media/UUI/",     desc = "Go to Mobile disk" },
+	{ on = [ "g", "u" ],       run = "cd ~/yandesu/alice",     desc = "Go to Alice" },
 	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "Go to downloads" },
-	{ on = [ "g", "t" ],       run = "cd ~/tool/",          desc = "Go to tool" },
+	{ on = [ "g", "t" ],       run = "cd ~/gaem/",          desc = "Go to gaem" },
 	{ on = [ "g", "o" ],       run = "cd ~/video/yutub",          desc = "Go to yutub" },
 	{ on = [ "g", "y" ],       run = "cd ~/.config/yazi/",          desc = "Go to yazi" },
 	{ on = [ "g", "i" ],       run = "cd ~/Pictures",          desc = "Go to image" },
@@ -333,6 +333,11 @@ desc = "Send selected files via KDE Connect"
 on   = [ "<C-s>" ]
 run  = "plugin kdeconnect-send"
 desc = "Send selected files via KDE Connect"
+
+[[manager.prepend_keymap]]
+on   = [ "u", "R" ]
+run  = "plugin dragon"
+desc = "Drag file(s) with dragon"
 # [[manager.prepend_keymap]]
 # on  = [ "c","l" ]
 # run = ['''

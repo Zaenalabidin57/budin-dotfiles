@@ -14,11 +14,12 @@ xset r rate 200 50 &
 dunst &
 #fastcompmgr &
 picom &
+nextcloud --background &
 /usr/bin/kdeconnectd &
 /usr/bin/kdeconnect-indicator &
 clipcatd &
 xss-lock -- sh -c "slock" &
 flameshot &
 udisksctl mount -b /dev/disk/by-id/usb-JMicron_Generic_0123456789ABCDEF-0:0-part1 -t exfat /run/media/shigure/YEET &
-yandex-disk start &
+#yandex-disk start &
 

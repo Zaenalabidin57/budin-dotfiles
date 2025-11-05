@@ -126,8 +126,8 @@ gappoh=10
 gappov=10
 borderpx=4
 rootcolor=0x201b14ff
-bordercolor=0x2b2b2bff
-focuscolor=0x2b15d4ff
+bordercolor=0x444444ff
+focuscolor=0xc9b890ff
 maxmizescreencolor=0x89aa61ff
 urgentcolor=0xad401fff
 scratchpadcolor=0x516c93ff
@@ -135,11 +135,11 @@ globalcolor=0xb153a7ff
 overlaycolor=0x14a57cff
 
 # layout support: tile,scroller,grid,monocle,spiral,dwindle
-tagrule=id:1,layout_name:deck
-tagrule=id:2,layout_name:deck
-tagrule=id:3,layout_name:deck
-tagrule=id:4,layout_name:deck
-tagrule=id:5,layout_name:deck
+tagrule=id:1,layout_name:dwindle
+tagrule=id:2,layout_name:dwindle
+tagrule=id:3,layout_name:dwindle
+tagrule=id:4,layout_name:dwindle
+tagrule=id:5,layout_name:dwindle
 
 # layer rules
 layerrule=noblur:1,layer_name:selection,animation_type_close:none
@@ -154,8 +154,7 @@ windowrule=isfloating:1,appid:*
 
 
 windowrule=isterm:1,appid:ghostty
-windowrule=isterm:1,appid:Thunar
-windorule=isfloating:1,appid:Thunar,title:"File Operation Progress"
+windorule=isfloating:1,appid:thunar,title:"File Operation Progress"
 windowrule=isfloating:1,isterm:1,appid:prostat
 windowrule=isfloating:1,isterm:1,appid:prostat
 windowrule=isterm:1,appid:st
@@ -224,7 +223,6 @@ bind=SUPER+CTRL,s,restore_minized
 # scroller layout
 #bind=SUPER,f,set_proportion,1.0
 bind=SUPER,f,togglemaxmizescreen,
-bind=SUPER,a,zoom
 bind=SUPER,r,switch_proportion_preset,
 
 # switch layout

@@ -22,9 +22,8 @@ ueberzug_offset = [ 0, 0, 0, 0 ]
 folder = [
 	{ run = 'nvim "$1"', block = true,desc = "neovim", for = "linux" },
 	{ run = 'code  "$@"',orphan = true, desc = "vscode" , for = "linux" },
-	{ run = 'zeditor  "$@"',orphan = true, desc = "zed" , for = "linux" },
 	{ run = '''fish -c "lazygit -p "$1""''', block = true,desc = "lazygit", for = "linux" },
-	{ run = 'basename "$@" | xargs -I {} tar --use-compress-program=pigz -cf ~/down/{}.tar.gz {}',orphan = true, desc = "archive" , for = "linux"  },
+	{ run = 'basename "$@" | xargs -I {} tar --use-compress-program=pigz -cf ~/Downloads/{}.tar.gz {}',orphan = true, desc = "archive" , for = "linux"  },
 
 ]
 archive = [
@@ -32,23 +31,26 @@ archive = [
 	# { run = 'basename "$@" | xargs tar xzf ', orphan = true, desc = "tar xzf" , for = "linux" },
 	# { run = 'unzip "$1"', orphan = true, desc = "unzip" , for = "linux" },
 	# { run = 'unar "$1"', orphan = true, desc = "unrar" , for = "linux" },
-	{ run = 'ouch decompress "$1" ', orphan = true, desc = "ouch decompress" , for = "linux" },
+	#{ run = 'ouch decompress "$1" ', orphan = true, desc = "ouch decompress" , for = "linux" },
+	{ run = '7z x "$1" ', orphan = true, desc = "eksuturacku here" , for = "linux" },
 ]
 
 text = [
 	{ run = 'nvim "$1"', block = true,desc = "neovim", for = "linux" },
 	{ run = 'code  "$@"',orphan = true, desc = "vscode" , for = "linux" },
-	{ run = 'zeditor  "$@"',orphan = true, desc = "zed" , for = "linux" },
-	{ run = 'gedit "$@" ', block = true, orphan = true, desc = "gedit"  , for = "linux"},
 	{ run = 'zathura "$@"',orphan = true, desc = "zathura"  , for = "linux" },
 ]
 image = [
-	{ run = 'imv-dir "$@"',  orphan = true, desc = "imv-dir" , for = "linux"},
-	{ run = 'mirage  "$@"',  orphan = true, desc = "mirage" , for = "linux"},
+	{ run = 'imv-dir "$@"',  orphan = true, desc = "imv" , for = "linux"},
+	{ run = 'sxiv -a "$@"',  orphan = true, desc = "sxiv" , for = "linux"},
 ]
 video = [
 	{ run = 'mpv "$@" ', orphan = true, desc = "mpv" , for = "linux" },
 	{ run = 'ffmpeg -i "$@" -vf "fps=10" -loop 0 "$@".gif', orphan = true, desc = "change to gif"  , for = "linux" },	
+
+	{ run = 'wine "$1"', orphan = true, desc = "wine gamij", for = "linux" },
+	{ run = 'umu-run "$1"', orphan = true, desc = "umu-run", for = "linux" },
+	{ run = 'LC_ALL=ja_JP.UTF-8 wine "$1"', orphan = true, desc = "wine japon", for = "linux" },
 
 ]
 audio = [
@@ -57,17 +59,29 @@ audio = [
 
 document = [
 	{ run = 'xdg-open "$@"', orphan = true, desc = "xdg-open" , for = "linux" },
-	{ run = 'okular "$@" ' , orphan = true, desc = "okular" , for = "linux"},
-	{ run = 'GTK_IM_MODULE=fcitx5 foliate "$@" ' , orphan = true, desc = "foliate" , for = "linux"},
+	{ run = 'libreoffice "$@" ' , orphan = true, desc = "libreoffice" , for = "linux"},
+]
+
+executable = [
+	{ run = 'wine "$1"', orphan = true, desc = "wine", for = "linux" },
 ]
 
 fallback = [
 	{ run = 'xdg-open "$@"', orphan = true, desc = "xdg-open" , for = "linux" },
+	{ run = 'nvim "$1"', block = true,desc = "neovim", for = "linux" },
 ]
-
+winej = [
+	{ run = 'wine "$1"', orphan = true, desc = "wine", for = "linux" },
+	{ run = 'LC_ALL=ja_JP.UTF-8 wine "$1"', orphan = true, desc = "wine japon", for = "linux" },
+	{ run = 'umu-run "$1"', orphan = true, desc = "umu-run", for = "linux" },
+]
 [open]
 rules = [
 	{ name = "*/", use = ["folder"] },
+	{ name = "*.sh", use = ["executable"] },
+	{ name = "*.gif", use = ["image"] },
+
+  { name = "*.exe", use = ["winej"]},
 
 	{ mime = "text/*", use = ["text"] },
 	{ mime = "image/*", use = ["image"] },

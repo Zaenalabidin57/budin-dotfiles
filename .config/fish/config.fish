@@ -1,9 +1,17 @@
 set -gx PATH $PATH /home/shigure/.cargo/bin /home/shigure/.config/composer/vendor/bin
 
-set -gx BW_SESSION "ek37z6ejsm2xftSo3NLiQNrbi/9LR1wv9HWcDOSC2TnU/XMYF+2PPBrWfU+McivIk753883RGDKaEnt6P1lzpQ=="
+set -gx PROTONPATH /usr/share/steam/compatibilitytools.d/proton-ge-custom/
+#set -gx QSG_RHI_BACKEND vulkan
+
 
 set -gx EDITOR nvim
 
+
+#CLOD
+
+if test -f ~/.config/fish/secret.fish
+  source ~/.config/fish/secret.fish
+end
 
 if status is-interactive
     # Use BusyBox instead of GNU coreutils
@@ -25,7 +33,6 @@ if status is-interactive
     abbr --add eee 'exit'
     abbr --add axis 'sudo sysctl -w net.ipv4.ip_default_ttl=65 && sudo sysctl -w net.ipv6.conf.all.hop_limit=65'
     abbr --add ccd cd
-    abbr --add japon "LC_ALL=ja_JP.UTF-8"
     abbr --add empd "mpd;mpd-mpris &; disown; rmpc"
     # zoxide init fish | source
     bind \cj 'nextd >/dev/null; commandline -f repaint'
@@ -53,9 +60,20 @@ if status is-interactive
     abbr --add rss "rc-status"
     abbr --add rsu "rc-service --user"
     abbr --add ruu "rc-update --user"
+    abbr --add cuaca "curl wttr.in/ciwidey?0"
+    #paplay /home/shigure/Music/click.wav >/dev/null 2>&1 &
 end
 
 
+function japon
+  wine /home/shigure/gaem/LunaTranslator/LunaTranslator.exe &
+  LC_ALL=ja_JP.UTF-8 wine $argv
+end
+
+
+function claude
+  /usr/bin/claude
+end
 function bwlist
     bw list items --search $argv | jq --tab
 end
@@ -86,9 +104,40 @@ function yt-mp3
 end
 
 function yt-mp4
-  #yt-dlp --extractor-args "youtube:player_client=android,web" --cookies-from-browser firefox --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/%(title)s.%(ext)s'
-  yt-dlp --cookies-from-browser firefox --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/%(title)s.%(ext)s' $argv
-  #  yt-dlp --format 'bv*+ba[ext=webm][acodec=vorbis]/b[ext=webm]' --prefer-ffmpeg -o '~/Videos/yt/%(title)s.%(ext)s'
+  # Download the video to a temporary directory
+  yt-dlp --cookies-from-browser firefox --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/temp/%(title)s.%(ext)s' $argv
+
+  #  # Exit if download fails
+  #  if test $status -ne 0
+  #    echo "Error: yt-dlp failed to download the video."
+  #    return 1
+  #  end
+  #
+  #  # Get the name of the downloaded video (the newest one)
+  #  set latest_video (ls -t "$HOME/Videos/yt/temp/" | head -n 1)
+  #
+  #  # Exit if no video is found
+  #  if test -z "$latest_video"
+  #    echo "Error: Could not find a downloaded video in the temp folder."
+  #    return 1
+  #  end
+  #
+  #  # Get the base name of the video (without extension)
+  #  set base_name (string split -r -m 1 '.' "$latest_video")[1]
+  #
+  #  # Convert the video's audio to ALAC and container to MOV
+  #  echo "Converting '$latest_video' to MOV with ALAC audio..."
+  #  ffmpeg -i "$HOME/Videos/yt/temp/$latest_video" -c:v copy -c:a alac "$HOME/Videos/yt/$base_name.mov"
+  #
+  #  # Check ffmpeg's exit status
+  #  if test $status -eq 0
+  #    echo "Conversion successful. Removing temporary file."
+  #    # Clean up the temporary file
+  #    rm "$HOME/Videos/yt/temp/$latest_video"
+  #  else
+  #    echo "ffmpeg conversion failed. Temporary file is at $HOME/Videos/yt/temp/$latest_video"
+  #    return 1
+  #  end
 end
 
 
@@ -126,8 +175,8 @@ end
 
 function fish_greeting
   #fastfetch
-  #nerdfetch
-  neofetch
+  nerdfetch
+  #neofetch
   #chafa ~/Pictures/artix.png
   #chafa ~/.config/fastfetch/uwaahh.png
   #   chafa /home/shigure/Pictures/mitafull.jpg
@@ -153,6 +202,35 @@ function y
 	rm -f -- "$tmp"
 end
 
+function davinki
+  if test -z "$argv[1]"
+    echo "Usage: davinki <input_video_file>"
+    return 1
+  end
+
+  set input_file $argv[1]
+
+  if not test -e "$input_file"
+    echo "Error: Input file not found: $input_file"
+    return 1
+  end
+
+  set output_filename (string split -r -m 1 '.' (basename "$input_file"))[1]
+  set output_dir (dirname "$input_file")
+  set output_path "$output_dir/$output_filename-resolve.mov"
+
+  echo "Converting '$input_file' for DaVinci Resolve..."
+  ffmpeg -i "$input_file" -c:v copy -c:a alac "$output_path"
+
+  if test $status -eq 0
+    echo "Successfully converted."
+    echo "Output: $output_path"
+  else
+    echo "Error during conversion."
+    return 1
+  end
+end
+
 if test -e "$HOME/.nix-profile/share/fish/site-functions"
   set -gx NIX_SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
   set -gx PATH "$HOME/.nix-profile/bin" $PATH
@@ -163,11 +241,10 @@ if status is-login
    if test -z "$DISPLAY" -a (tty) = /dev/tty1
      #exec dbus-run-session mango
      #exec dbus-run-session sway
-     #exec dbus-run-session startx --keeptty
+     exec dbus-run-session startx
      #exec run_dwl
-     #exec dbus-run-session dwl
      #exec dbus-run-session niri --session
-     exec dbus-run-session labwc
+     #exec dbus-run-session labwc
    end
 end
 
