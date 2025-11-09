@@ -61,6 +61,7 @@ if status is-interactive
     abbr --add rsu "rc-service --user"
     abbr --add ruu "rc-update --user"
     abbr --add cuaca "curl wttr.in/ciwidey?0"
+    abbr --add doas sudo
     #paplay /home/shigure/Music/click.wav >/dev/null 2>&1 &
 end
 
@@ -105,7 +106,7 @@ end
 
 function yt-mp4
   # Download the video to a temporary directory
-  yt-dlp --cookies-from-browser firefox --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/temp/%(title)s.%(ext)s' $argv
+  yt-dlp --cookies-from-browser firefox --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/%(title)s.%(ext)s' $argv
 
   #  # Exit if download fails
   #  if test $status -ne 0
@@ -241,10 +242,11 @@ if status is-login
    if test -z "$DISPLAY" -a (tty) = /dev/tty1
      #exec dbus-run-session mango
      #exec dbus-run-session sway
-     exec dbus-run-session startx
+     #exec dbus-run-session startx
      #exec run_dwl
      #exec dbus-run-session niri --session
      #exec dbus-run-session labwc
+     #exec dbus-run-session hyprland
    end
 end
 

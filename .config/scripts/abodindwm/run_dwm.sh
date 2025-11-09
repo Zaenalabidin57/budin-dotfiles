@@ -35,4 +35,5 @@ udisksctl mount -b /dev/disk/by-id/usb-JMicron_Generic_0123456789ABCDEF-0:0-part
 
 sh ~/.config/scripts/abodindwm/bar_dwm.sh &
 #chadwm
-while type chadwm >/dev/null; do dbus-run-session chadwm && continue || break; done
+#while type chadwm >/dev/null; do dbus-run-session chadwm && continue || break; done
+while type chadwm >/dev/null; do dbus-run-session dwm && continue || break; done
