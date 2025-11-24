@@ -1,7 +1,8 @@
 #!/bin/sh
 export XDG_SESSION_TYPE=x11
-#exec ~/.config/scripts/abodindwm/run_dwm.sh
-exec dbus-run-session icewm-session
+xset r rate 200 50
+exec ~/.config/scripts/abodindwm/run_dwm.sh
+#exec dbus-run-session icewm-session
 #exec dbus-run-session jwm
 #exec ~/.config/scripts/abodinrwm/run_rwm.sh
 #exec dbus-run-session rwm

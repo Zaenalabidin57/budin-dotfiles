@@ -189,3 +189,17 @@ Got signal 11, faulty address is 8, from 0xa503f2
 [bt] /usr/lib/libc.so.6(+0x945e5) [0x7f92a21315e5]
 [bt] /usr/lib/libc.so.6(+0x1154cc) [0x7f92a21b24cc]
 
+2025-11-19.10:37:39
+Got signal 11, faulty address is 8, from 0xa503f2 
+0.1.6.1080 x64
+[bt] Execution path:
+[bt] /usr/bin/yandex-disk() [0xa503f2]
+[bt] /usr/bin/yandex-disk() [0xa503f2]
+[bt] /usr/bin/yandex-disk() [0xa5328f]
+[bt] /usr/bin/yandex-disk() [0x45a85a]
+[bt] /usr/bin/yandex-disk() [0x43288f]
+[bt] /usr/bin/yandex-disk() [0x8258e5]
+[bt] /usr/bin/yandex-disk() [0xa7424c]
+[bt] /usr/lib/libc.so.6(+0x94605) [0x7f455bf65605]
+[bt] /usr/lib/libc.so.6(+0x11554c) [0x7f455bfe654c]
+

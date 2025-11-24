@@ -1,6 +1,16 @@
 #!/bin/sh
 
+# ^c$var^ = fg color
+# ^b$var^ = bg color
+
 interval=0
+
+
+# load colors
+#. ~/.config/scripts/abodindwm/bar_themes/biji
+#. ~/.config/scripts/abodindwm/bar_themes/catppuccin
+. ~/.config/scripts/abodindwm/bar_themes/bored
+#. ~/shigure/abodindwm/scripts/bar_themes/biji
 
 temperature() {
   local temp_raw
@@ -8,8 +18,9 @@ temperature() {
   local temp_deg="${temp_raw:0:2}"
 
   if [ $temp_deg -gt 80 ]; then
-    printf " $temp_deg°C"
+    printf "^c$black^ ^b$red^ $temp_deg°C"
   fi
+#printf "^c$white^ ^b$grey^ $(cat /sys/class/hwmon/hwmon1/temp1_input)°C"  
 }
 
 cpu() {
@@ -18,10 +29,11 @@ cpu() {
   cpu_speed=$(cat /proc/cpuinfo | grep 'cpu MHz' | awk '{printf("%.1f\n", $4 / 1000)}' | head -n 1)
   is_lagging=$(echo "$cpu_speed 0.5" | awk '{if ($1 < $2) print "true"; else print "false"}')
   if [ "$is_lagging" = true ]; then
-    printf " LAGtrain"
+    printf "^c$black^ ^b$red^ LAGtrain"
   fi
-  printf " CPU"
-  printf " $cpu_val"
+  #printf "^c$blue^ ^b$black^ CPU"
+  printf "^c$white^ ^b$black^ CPU"
+  printf "^c$white^ ^b$black^ $cpu_val"
 }
 
 pkg_updates() {
@@ -30,9 +42,9 @@ pkg_updates() {
   # updates=$({ timeout 20 aptitude search '~U' 2>/dev/null || true; } | wc -l)  # apt (ubuntu, debian etc)
 
   if [ -z "$updates" ]; then
-    printf "    Fully Updated"
+    printf "  ^c$white^    Fully Updated"
   else
-    printf "    $updates"" updates"
+    printf "  ^c$white^    $updates"" updates"
   fi
 }
 
@@ -41,33 +53,38 @@ battery() {
   if [ "$get_capacity" -eq 100 ]; then
     printf " "
   elif [ "$get_capacity" -lt 30 ]; then
-    printf "   $get_capacity CAS OEYYYY"
+    printf "^c$red^   $get_capacity CAS OEYYYY"
   else
-    printf "   $get_capacity"
+    #printf "^c$blue^   $get_capacity"
+    printf "^c$white^   $get_capacity"
   fi
 }
 
 brightness() {
   prostate=$(($(cat /sys/class/backlight/*/brightness) * 100 / 255))
-  printf "   "
-  printf "%.0f\n" $prostate
+  #printf "^c$blue^   "
+  printf "^c$white^   "
+  printf "^c$blue^%.0f\n" $prostate
 }
 
 mem() {
-  printf "  "
-  printf " $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
+  #printf "^c$blue^^b$black^  "
+  printf "^c$white^^b$black^  "
+  printf "^c$white^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
 }
 
 wlan() {
 	case "$(cat /sys/class/net/wl*/operstate 2>/dev/null)" in
-	up) printf " 󰤨 %s" ;;
-	down) printf " 󰤭 %s" " Disconnected" ;;
+	#up) printf "^c$blue^ ^b$black^ 󰤨 ^d^%s" ;;
+	up) printf "^c$white^ ^b$black^ 󰤨 ^d^%s" ;;
+	down) printf "^c$black^ ^b$white^ 󰤭 ^d^%s" " ^c$blue^Disconnected" ;;
 	esac
 }
 
 clock() {
-	printf " 󱑆 "
-	printf " $(date '+%H:%M')  "
+	#printf "^c$blue^ ^b$black^ 󱑆 "
+	printf "^c$white^ ^b$black^ 󱑆 "
+	printf "^c$white^^b$black^ $(date '+%H:%M')  "
 }
 network_speed() {
     local rx_delta
@@ -94,11 +111,12 @@ network_speed() {
     rx_formatted="$(($rx_delta / 1024))"
     tx_formatted="$tx_delta"
 
-    #printf " 󰚫 %s"
+    #printf "^c$blue^ ^b$black^ 󰚫 ^d^%s"
+    printf "^c$white^ ^b$black^ 󰚫 ^d^%s"
     if [ $rx_formatted -gt 1024 ]; then
-      printf " $(($rx_formatted / 1024 ))MB/s"
+      printf "^c$white^ ^b$black^ $(($rx_formatted / 1024 ))MB/s"
     else
-    printf " $rx_formatted KB/s"
+    printf "^c$white^ ^b$black^ $rx_formatted KB/s"
     fi
 
     # Format the output string for the status bar

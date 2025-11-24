@@ -3,5 +3,10 @@ use = "yazi-rs/plugins:mount"
 rev = "8f1d971"
 hash = "4fccaaf10c36dc2466e2438a386ff017"
 
+[[plugin.deps]]
+use = "Deepak22903/kdeconnect-send"
+rev = "5757a65"
+hash = "c23a7c129f3b972569414c8f2a5dd823"
+
 [flavor]
 deps = []

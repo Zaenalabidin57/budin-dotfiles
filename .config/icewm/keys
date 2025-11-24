@@ -8,22 +8,22 @@
 # Omit the XK_ prefixs and replace XF86XK_ prefixes by XF86.
 # Valid modifiers are Alt, AltGr, Ctrl, Shift, Meta, Super and Hyper.
 #a
-key "Super+d"               rofi -show drun
+key "Super+d"               dmenu-apps
 key "Super+o"               qutebrowser
 key "Super+n"               thunar
 key "Super+m"               neovide
-key "Super+Shift+n"               ghostty -e yazi
+key "Super+Shift+n"               st -e yazi
 key "Super+y"               clipcat-menu
-key "Super+w"               rofi -show emoji
-key "Super+Return"          ghostty
-key "Super+Shift+Return"          ghostty
+#key "Super+w"               rofi -show emoji
+key "Super+Return"          st
+key "Super+Shift+Return"          st
 key "Super+Shift+p"          slock
-key "Super+Shift+e"          ghostty -e /home/shigure/exit.sh
+key "Super+Shift+e"          st -e /home/shigure/exit.sh
 
 key "Super+q"  Close
 key "Super+f" Maximize
 
-key "Print" flameshot gui
+key "Print" xshot
 
 # "Multimedia key" bindings for Xorg. Gather the keycodes of your
 # advanced function keys by watching the output of the xev command

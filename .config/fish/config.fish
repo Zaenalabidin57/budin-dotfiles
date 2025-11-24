@@ -13,6 +13,10 @@ if test -f ~/.config/fish/secret.fish
   source ~/.config/fish/secret.fish
 end
 
+# android
+if test -f ~/.config/fish/android.fish
+  source ~/.config/fish/android.fish
+end
 if status is-interactive
     # Use BusyBox instead of GNU coreutils
    # alias ls 'busybox ls --color=auto'
@@ -61,7 +65,6 @@ if status is-interactive
     abbr --add rsu "rc-service --user"
     abbr --add ruu "rc-update --user"
     abbr --add cuaca "curl wttr.in/ciwidey?0"
-    abbr --add doas sudo
     #paplay /home/shigure/Music/click.wav >/dev/null 2>&1 &
 end
 
@@ -79,12 +82,12 @@ function bwlist
     bw list items --search $argv | jq --tab
 end
 
-function cp
-advcp -gR $argv
-end
-function mv
-advmv -g $argv
-end
+#function cp
+#advcp -gR $argv
+#end
+#function mv
+#advmv -g $argv
+#end
 function cd
   z $argv
   ls
@@ -100,7 +103,7 @@ function mkcd
 end
 
 function yt-mp3
-  #yt-dlp --extractor-args "youtube:player_client=android,web" --cookies-from-browser firefox  -x --audio-format mp3 --audio-quality 0 -o '~/Music/yutub/%(title)s.%(ext)s' $argv
+  #yt-dlp --extractor-args "youtube:player_client=android,web" --cookies-from-browser firefox:/home/shigure/.config/qutebrowser  -x --audio-format mp3 --audio-quality 0 -o '~/Music/yutub/%(title)s.%(ext)s' $argv
     yt-dlp --cookies-from-browser firefox  -x --audio-format mp3 --audio-quality 0 -o '~/Music/yutub/%(title)s.%(ext)s' $argv
 end
 
@@ -144,7 +147,7 @@ end
 
 function yt-gif
   # 1. Download the video using the provided URL ($argv)
-  #yt-dlp --extractor-args "youtube:player_client=android,web" --cookies-from-browser firefox --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/temp/%(title)s.%(ext)s' $argv
+  #yt-dlp --extractor-args "youtube:player_client=android,web" --cookies-from-browser qutebrowser --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/temp/%(title)s.%(ext)s' $argv
   yt-dlp --cookies-from-browser firefox --format 'bv*[ext=mp4]+ba[ext=ogg]/b[ext=mp4]' -o '~/Videos/yt/temp/%(title)s.%(ext)s' $argv
 
   # 2. Stop if the download failed
@@ -165,18 +168,21 @@ function yt-gif
   # 4. Remove the old extension to get the base name
   set base_name (string split -r -m 1 '.' "$latest_video")[1]
 
-  # 5. Run ffmpeg using $HOME for reliable path expansion
+  # 5. Create the output directory if it doesn't exist
+  mkdir -p "$HOME/Videos/yt/gifs/"
+
+  # 6. Run ffmpeg using $HOME for reliable path expansion
   echo "Converting '$latest_video' to a GIF..."
   ffmpeg -i "$HOME/Videos/yt/temp/$latest_video" "$HOME/Videos/yt/gifs/$base_name.gif"
 
-  # 6. Remove the temporary video
+  # 7. Remove the temporary video
   rm -f "$HOME/Videos/yt/temp/*"
 
 end
 
 function fish_greeting
   #fastfetch
-  nerdfetch
+  #nerdfetch
   #neofetch
   #chafa ~/Pictures/artix.png
   #chafa ~/.config/fastfetch/uwaahh.png
@@ -242,44 +248,43 @@ if status is-login
    if test -z "$DISPLAY" -a (tty) = /dev/tty1
      #exec dbus-run-session mango
      #exec dbus-run-session sway
-     #exec dbus-run-session startx
+     exec dbus-run-session startx
      #exec run_dwl
      #exec dbus-run-session niri --session
      #exec dbus-run-session labwc
-     #exec dbus-run-session hyprland
    end
 end
 
 
-if set -q CONTAINER_ID
-  # We are inside a Distrobox container
-  if contains $CONTAINER_ID 'archbtw'
-    function fish_prompt
-      set_color blue
-      echo -n "[ Archbtw] "
-      set_color normal
-      echo -n (prompt_pwd)
-      echo -n "> "
-    end
-  end
-  if contains $CONTAINER_ID 'gamij'
-    function fish_prompt
-      set_color yellow
-      echo -n "[ gamij] "
-      set_color normal
-      echo -n (prompt_pwd)
-      echo -n "> "
-    end
-  else
-    function fish_prompt
-      set_color green
-      echo -n "[ $CONTAINER_ID] "
-      set_color normal
-      echo -n (prompt_pwd)
-      echo -n "> "
-    end
-  end
-end
+#if set -q CONTAINER_ID
+#  # We are inside a Distrobox container
+#  if contains $CONTAINER_ID 'archbtw'
+#    function fish_prompt
+#      set_color blue
+#      echo -n "[ Archbtw] "
+#      set_color normal
+#      echo -n (prompt_pwd)
+#      echo -n "> "
+#    end
+#  end
+#  if contains $CONTAINER_ID 'gamij'
+#    function fish_prompt
+#      set_color yellow
+#      echo -n "[ gamij] "
+#      set_color normal
+#      echo -n (prompt_pwd)
+#      echo -n "> "
+#    end
+#  else
+#    function fish_prompt
+#      set_color green
+#      echo -n "[ $CONTAINER_ID] "
+#      set_color normal
+#      echo -n (prompt_pwd)
+#      echo -n "> "
+#    end
+#  end
+#end
 
 
 #if status is-login
@@ -293,15 +298,3 @@ set --export PATH $BUN_INSTALL/bin $PATH
 # opencode
 fish_add_path /home/shigure/.opencode/bin
 
-# Syntax highlighting for system commands
-function lsblk
-    command lsblk $argv | bat --plain --language=sh
-end
-
-function free
-    command free $argv | bat --plain --language=sh
-end
-
-function df
-    command df $argv | bat --plain --language=sh
-end

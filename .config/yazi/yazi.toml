@@ -31,7 +31,7 @@ archive = [
 	# { run = 'basename "$@" | xargs tar xzf ', orphan = true, desc = "tar xzf" , for = "linux" },
 	# { run = 'unzip "$1"', orphan = true, desc = "unzip" , for = "linux" },
 	# { run = 'unar "$1"', orphan = true, desc = "unrar" , for = "linux" },
-	#{ run = 'ouch decompress "$1" ', orphan = true, desc = "ouch decompress" , for = "linux" },
+	{ run = 'ouch decompress "$1" ', orphan = true, desc = "ouch decompress" , for = "linux" },
 	{ run = '7z x "$1" ', orphan = true, desc = "eksuturacku here" , for = "linux" },
 ]
 
