@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Function to unmount devices with single pkexec
+unmount_devices() {
+    pkexec bash -c "
+        udisksctl unmount -b /dev/sdb1 2>/dev/null
+        udisksctl power-off -b /dev/sdb 2>/dev/null
+        udisksctl unmount -b /dev/sda1 2>/dev/null
+        udisksctl power-off -b /dev/sda 2>/dev/null
+        udisksctl unmount -b /dev/disk/by-id/usb-JMicron_Generic_0123456789ABCDEF-0:0-part1 2>/dev/null
+        udisksctl power-off -b /dev/disk/by-id/usb-JMicron_Generic_0123456789ABCDEF-0:0 2>/dev/null
+    "
+}
+
+# Main function
+main() {
+    notify-send "sistem keluar"
+    pkill mpd
+
+    # Create dmenu options
+    options="Shutdown\nPoweroff\nReboot\nLogout\nHibernate"
+
+    # Display dmenu and get selection
+    choice=$(echo -e "$options" | dmenu -i -p "Pilih Sistem:" -fn "monospace-12" -nb "#282828" -nf "#ebdbb2" -sb "#458588" -sf "#ebdbb2")
+
+    # Handle selection
+    case "$choice" in
+        "Shutdown")
+            unmount_devices
+            echo "shutting down in 5 seconds"
+            mpv --screen=1 --fs --fs-screen=1 ~/wollpeper/exit.mp4
+            pkexec poweroff
+            ;;
+        "Poweroff")
+            swaylock
+            ;;
+        "Reboot")
+            unmount_devices
+            pkexec reboot
+            ;;
+        "Logout")
+            hyprctl dispatch exit
+            pkill Hypr
+            ;;
+        "Hibernate")
+            unmount_devices
+            echo "hibernotting"
+            loginctl hibernate
+            ;;
+        *)
+            echo "No selection made"
+            exit 0
+            ;;
+    esac
+}
+
+main

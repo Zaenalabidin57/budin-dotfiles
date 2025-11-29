@@ -31,7 +31,7 @@ if status is-interactive
    # alias top 'busybox top'
 
     # Commands to run in interactive sessions can go here
-    #abbr --add vim nvim
+    abbr --add vim nvim
     #abbr --add neofetch nerdfetch
     abbr --add uwe 'sshfs server@192.168.100.69:/ uwe'
     abbr --add eee 'exit'
@@ -50,12 +50,16 @@ if status is-interactive
     abbr --add windog 'sudo rc-service libvirtd start;sleep 2; sudo virsh net-start default;virt-manager &; disown'
 
     abbr --add  shgiure shigure
-    abbr --add winevn "WINEPREFIX=/home/shigure/.adobo/Adobe-Photoshop/ wine"
+    #abbr --add winevn "WINEPREFIX=/home/shigure/.adobo/Adobe-Photoshop/ wine"
+    abbr --add winevn "WINEPREFIX=/home/shigure/.winevn LC_ALL=ja_JP.UTF-8 wine"
     abbr --add winegamij "WINEPREFIX=/home/shigure/gaem/.gamij wine"
+    abbr --add jp "LC_ALL=ja_JP.UTF-8"
 
     abbr --add umuj "PROTONPATH='/usr/share/steam/compatibilitytools.d/proton-ge-custom/' umu-run"
 
     abbr --add boat "sudo rc-service docker start; setsid winboat"
+
+    abbr --add vivo "ssh u0_a286@192.168.100.20 -p 8022"
 
 
     # singkatan openrc
