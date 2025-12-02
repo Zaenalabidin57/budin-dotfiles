@@ -1,0 +1,272 @@
+#!/bin/bash
+
+# rekord - suckless screen recording with audio
+# Dependencies: ffmpeg, slop, rofi, pulseaudio, xdotool
+
+CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/rekord"
+RECORDINGS_DIR="${XDG_VIDEOS_DIR:-$HOME/Videos}/rekord"
+PID_FILE="/tmp/rekord.pid"
+
+mkdir -p "$CONFIG_DIR" "$RECORDINGS_DIR"
+
+# Default settings
+AUDIO_SOURCE="desktop"
+VIDEO_CODEC="libx264"
+AUDIO_CODEC="aac"
+PRESET="ultrafast"
+CRF="23"
+FRAMERATE="30"
+
+show_menu() {
+    echo "  Start Recording"
+    echo "  Stop Recording"
+    echo "  Cancel Recording"
+    echo "  Open Recordings"
+    echo "⚙  Settings"
+}
+
+show_recording_options() {
+    echo "  Fullscreen"
+    echo "  Window"
+    echo "  Region"
+    echo "  Back"
+}
+
+show_audio_options() {
+    echo "  Desktop Audio"
+    echo "  Microphone"
+    echo "+  Both"
+    echo "  Back"
+}
+
+show_settings() {
+    echo "Video Codec: $VIDEO_CODEC"
+    echo "Audio Codec: $AUDIO_CODEC"
+    echo "Preset: $PRESET"
+    echo "CRF: $CRF"
+    echo "Framerate: $FRAMERATE"
+    echo "Audio Source: $AUDIO_SOURCE"
+    echo "  Back"
+}
+
+get_audio_source() {
+    case $AUDIO_SOURCE in
+        "desktop")
+            echo "pulse"
+            ;;
+        "mic")
+            echo "pulse"
+            ;;
+        "both")
+            echo "pulse"
+            ;;
+    esac
+}
+
+get_audio_args() {
+    case $AUDIO_SOURCE in
+        "desktop")
+            echo "-f pulse -ac 2 -i default"
+            ;;
+        "mic")
+            echo "-f pulse -ac 1 -i default"
+            ;;
+        "both")
+            echo "-f pulse -ac 2 -i default -f pulse -ac 1 -i default"
+            ;;
+    esac
+}
+
+start_recording() {
+    local mode=$1
+    local timestamp=$(date +"%Y%m%d_%H%M%S")
+    local output_file="$RECORDINGS_DIR/rekord_$timestamp.mp4"
+    
+    case $mode in
+        "fullscreen")
+            local geometry=$(xdpyinfo | awk '/dimensions/{print $2}')
+            local width=$(echo $geometry | cut -d'x' -f1)
+            local height=$(echo $geometry | cut -d'x' -f2)
+            local video_args="-f x11grab -r $FRAMERATE -s ${width}x${height} -i :0.0"
+            ;;
+        "window")
+            local window_id=$(xdotool selectwindow)
+            local geometry=$(xwininfo -id $window_id | awk '/Absolute upper-left X/{x=$4} /Absolute upper-left Y/{y=$4} /Width/{w=$2} /Height/{h=$2} END{print w"x"h"+"x"+"y}')
+            local video_args="-f x11grab -r $FRAMERATE -s $(echo $geometry | cut -d'+' -f1) -i :0.0+$(echo $geometry | cut -d'+' -f2- | sed 's/+/,/')"
+            ;;
+        "region")
+            local selection=$(slop -f "%x %y %w %h")
+            if [ $? -ne 0 ]; then
+                exit 1
+            fi
+            local x=$(echo $selection | cut -d' ' -f1)
+            local y=$(echo $selection | cut -d' ' -f2)
+            local w=$(echo $selection | cut -d' ' -f3)
+            local h=$(echo $selection | cut -d' ' -f4)
+            local video_args="-f x11grab -r $FRAMERATE -s ${w}x${h} -i :0.0+${x},${y}"
+            ;;
+    esac
+    
+    local audio_args=$(get_audio_args)
+    local full_args="$video_args $audio_args -c:v $VIDEO_CODEC -preset $PRESET -crf $CRF -c:a $AUDIO_CODEC $output_file"
+    
+    # Start ffmpeg in background
+    ffmpeg $full_args &
+    local pid=$!
+    echo $pid > "$PID_FILE"
+    echo "$output_file" > "${PID_FILE}.file"
+    
+    # Show notification
+    notify-send "rekord" "Recording started ($mode)"
+    
+    echo "Recording started with PID: $pid"
+    echo "Output: $output_file"
+}
+
+stop_recording() {
+    if [ -f "$PID_FILE" ]; then
+        local pid=$(cat "$PID_FILE")
+        local output_file=$(cat "${PID_FILE}.file" 2>/dev/null)
+        
+        kill -INT $pid 2>/dev/null
+        rm -f "$PID_FILE" "${PID_FILE}.file"
+        
+        notify-send "rekord" "Recording stopped"
+        echo "Recording stopped. File saved to: $output_file"
+    else
+        echo "No recording in progress"
+    fi
+}
+
+cancel_recording() {
+    if [ -f "$PID_FILE" ]; then
+        local pid=$(cat "$PID_FILE")
+        local output_file=$(cat "${PID_FILE}.file" 2>/dev/null)
+        
+        kill -TERM $pid 2>/dev/null
+        rm -f "$PID_FILE" "${PID_FILE}.file"
+        
+        # Remove incomplete file
+        [ -f "$output_file" ] && rm -f "$output_file"
+        
+        notify-send "rekord" "Recording cancelled"
+        echo "Recording cancelled"
+    else
+        echo "No recording in progress"
+    fi
+}
+
+open_recordings() {
+    xdg-open "$RECORDINGS_DIR"
+}
+
+main() {
+    while true; do
+        choice=$(show_menu | rofi -dmenu -i -p "rekord" -theme-str "window { width: 300px; }")
+
+        # Exit if user cancels (esc key or closes rofi)
+        if [ -z "$choice" ]; then
+            exit 0
+        fi
+
+        case $choice in
+            "  Start Recording")
+                while true; do
+                    mode_choice=$(show_recording_options | rofi -dmenu -i -p "Select recording mode" -theme-str "window { width: 250px; }")
+
+                    # Exit if user cancels
+                    if [ -z "$mode_choice" ]; then
+                        break
+                    fi
+
+                    case $mode_choice in
+                        "  Fullscreen")
+                            start_recording "fullscreen"
+                            break 2
+                            ;;
+                        "  Window")
+                            start_recording "window"
+                            break 2
+                            ;;
+                        "  Region")
+                            start_recording "region"
+                            break 2
+                            ;;
+                        "  Back")
+                            break
+                            ;;
+                    esac
+                done
+                ;;
+            "  Stop Recording")
+                stop_recording
+                ;;
+            "  Cancel Recording")
+                cancel_recording
+                ;;
+            "  Open Recordings")
+                open_recordings
+                ;;
+            "⚙  Settings")
+                while true; do
+                    setting_choice=$(show_settings | rofi -dmenu -i -p "Settings" -theme-str "window { width: 300px; }")
+
+                    # Exit if user cancels
+                    if [ -z "$setting_choice" ]; then
+                        break
+                    fi
+
+                    case $setting_choice in
+                        "Video Codec: $VIDEO_CODEC")
+                            new_codec=$(echo -e "libx264\nlibvpx-vp9\nlibx265" | rofi -dmenu -i -p "Video codec")
+                            [ ! -z "$new_codec" ] && VIDEO_CODEC="$new_codec"
+                            ;;
+                        "Audio Codec: $AUDIO_CODEC")
+                            new_codec=$(echo -e "aac\nlibvorbis\nmp3" | rofi -dmenu -i -p "Audio codec")
+                            [ ! -z "$new_codec" ] && AUDIO_CODEC="$new_codec"
+                            ;;
+                        "Preset: $PRESET")
+                            new_preset=$(echo -e "ultrafast\nsuperfast\nveryfast\nfaster\nfast\nmedium" | rofi -dmenu -i -p "Preset")
+                            [ ! -z "$new_preset" ] && PRESET="$new_preset"
+                            ;;
+                        "CRF: $CRF")
+                            new_crf=$(echo -e "18\n20\n23\n25\n28" | rofi -dmenu -i -p "CRF (lower = better quality)")
+                            [ ! -z "$new_crf" ] && CRF="$new_crf"
+                            ;;
+                        "Framerate: $FRAMERATE")
+                            new_fps=$(echo -e "24\n30\n60" | rofi -dmenu -i -p "Framerate")
+                            [ ! -z "$new_fps" ] && FRAMERATE="$new_fps"
+                            ;;
+                        "Audio Source: $AUDIO_SOURCE")
+                            new_source=$(show_audio_options | rofi -dmenu -i -p "Audio source" -theme-str "window { width: 200px; }")
+
+                            # Exit if user cancels
+                            if [ -z "$new_source" ]; then
+                                continue
+                            fi
+
+                            case $new_source in
+                                "  Desktop Audio") AUDIO_SOURCE="desktop" ;;
+                                "  Microphone") AUDIO_SOURCE="mic" ;;
+                                "+  Both") AUDIO_SOURCE="both" ;;
+                            esac
+                            ;;
+                        "  Back")
+                            break
+                            ;;
+                    esac
+                done
+                ;;
+        esac
+    done
+}
+
+# Check dependencies
+for cmd in ffmpeg slop rofi xdotool notify-send; do
+    if ! command -v $cmd &> /dev/null; then
+        echo "Error: $cmd is not installed"
+        exit 1
+    fi
+done
+
+main "$@"

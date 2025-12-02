@@ -7,13 +7,13 @@ xrdb merge ~/.Xresources &
 xbacklight -set 10 &
 xrandr --output HDMI-1 --left-of eDP-1
 xrandr --output eDP --set TearFree on
+xset r rate 200 50 
 #nitrogen --restore
-#feh --bg-fill ~/Pictures/wollpeper/saygex.jpg &
+feh --bg-fill ~/Pictures/wollpeper/chie.jpg &
 #feh --bg-fill ~/Pictures/wollpeper/chne.jpeg &
 #feh --bg-fill ~/Pictures/wollpeper/chieh.jpg &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #conky &
-xset r rate 200 50 &
 dunst &
 #picom &
 #fastcompmgr -r 20 -c -C -e 1.0 -i 1.0 -o 0.5 -m 0.3 -o 0.5 &
@@ -32,6 +32,7 @@ wayland-pipewire-idle-inhibit &
 #/usr/bin/pipewire-pulse &
 #restore-brightness &
 libinput-gestures-setup start &
+
 udisksctl mount -b /dev/disk/by-id/usb-JMicron_Generic_0123456789ABCDEF-0:0-part1 -t exfat /run/media/shigure/YEET &
 
 

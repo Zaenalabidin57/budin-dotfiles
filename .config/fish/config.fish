@@ -29,6 +29,7 @@ if status is-interactive
    # alias df 'busybox df -h'
    # alias du 'busybox du -h'
    # alias top 'busybox top'
+   xset r rate 200 50
 
     # Commands to run in interactive sessions can go here
     abbr --add vim nvim

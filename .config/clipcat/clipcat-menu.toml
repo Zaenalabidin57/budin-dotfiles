@@ -1,5 +1,5 @@
 server_endpoint = "/run/user/1000/clipcat/grpc.sock"
-finder = "dmenu"
+finder = "rofi"
 preview_length = 80
 
 [rofi]
