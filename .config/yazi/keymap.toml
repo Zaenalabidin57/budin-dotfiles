@@ -162,8 +162,8 @@ keymap = [
 	{ on = [ "w" ], run = "tasks:show", desc = "Show the tasks manager" },
 
 	# Goto
-	{ on = [ "g", "y" ],       run = "cd /run/media/shigure/YEET",       desc= " go to YEET" },
-	{ on = [ "g", "s" ],       run = "cd /run/media/shigure/YEET/nitip/sigmund_freud",             desc = "go to sigmund" },
+	{ on = [ "g", "y" ],       run = "cd /run/media/shigure/yunandari",       desc= " go to YEET" },
+	{ on = [ "g", "s" ],       run = "cd /run/media/shigure/yunandari/nitip/sigmund_freud",             desc = "go to sigmund" },
 	{ on = [ "g", "i" ],       run = "cd ~/.config",     desc = "config" },
 	{ on = [ "g", "h" ],       run = "cd ~/",     desc = "Homo" },
 	{ on = [ "g", "u" ],       run = "cd ~/yandesu/alice",     desc = "Alice" },

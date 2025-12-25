@@ -16,4 +16,3 @@ wayland-pipewire-idle-inhibit &
 #foot -s &
 kanshi &
 yandex-disk start &
-udisksctl mount -b /dev/disk/by-id/usb-JMicron_Generic_0123456789ABCDEF-0:0-part1 -t exfat /run/media/shigure/YEET &

@@ -106,7 +106,7 @@ main() {
                 break;;
             h|5) 
                 echo "hibernotting"
-                systemctl hibernate; 
+                loginctl hibernate; 
                 break;;
             "") 
                 case $current in
@@ -123,7 +123,7 @@ main() {
                         break;;
                     4)
                         echo "hibernotting"
-                        systemctl hibernate;
+                        loginctl hibernate;
                         break;;
                 esac;;
             q) break;;

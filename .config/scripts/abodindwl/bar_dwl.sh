@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # ^c$var^ = fg color
 # ^b$var^ = bg color

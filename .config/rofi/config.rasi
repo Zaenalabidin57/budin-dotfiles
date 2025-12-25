@@ -1,5 +1,5 @@
 configuration{
-    modi: "run,drun,window";
+    modi: "run,drun,window,emoji";
     lines: 20;
     font: "AbudinCode 12";
     show-icons: true;

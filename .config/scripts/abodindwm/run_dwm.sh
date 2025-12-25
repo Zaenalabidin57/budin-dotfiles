@@ -18,8 +18,10 @@ dunst &
 #picom &
 #fastcompmgr -r 20 -c -C -e 1.0 -i 1.0 -o 0.5 -m 0.3 -o 0.5 &
 #fastcompmgr &
-dcompmgr &
+#dcompmgr &
 #fastcompmgr -o 0.4 -r 12 -c -C &
+picom &
+#xcompmgr &
 /usr/bin/kdeconnectd &
 /usr/bin/kdeconnect-indicator &
 #xss-lock -- sh -c "slock" &
@@ -33,10 +35,10 @@ wayland-pipewire-idle-inhibit &
 #restore-brightness &
 libinput-gestures-setup start &
 
-udisksctl mount -b /dev/disk/by-id/usb-JMicron_Generic_0123456789ABCDEF-0:0-part1 -t exfat /run/media/shigure/YEET &
+udisksctl mount -b /dev/disk/by-id/usb-JMicron_Generic_0123456789ABCDEF-0:0-part1 -t exfat /run/media/shigure/yunandari &
 
 
-clipcatd &
+clipmenud &
 
 #yandex-disk start &
 
@@ -44,6 +46,5 @@ clipcatd &
 sh ~/.config/scripts/abodindwm/bar_dwm.sh &
 
 #/usr/bin/wireplumber &
-dbus-run-session dwm
 #while type chadwm >/dev/null; do dbus-run-session chadwm && continue || break; done
-#while type dwm >/dev/null; do dbus-run-session dwm && continue || break; done
+while type dwm >/dev/null; do dbus-run-session dwm && continue || break; done

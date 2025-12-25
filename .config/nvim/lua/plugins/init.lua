@@ -2,6 +2,7 @@ return {
   {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
+    -- 
     config = function()
       require "configs.conform"
     end,
@@ -74,7 +75,7 @@ return {
     dependencies = {
       {
         "Exafunction/windsurf.nvim",
-        enabled = true,
+        enabled = false,
         event = "VeryLazy",
         config = function()
           require("codeium").setup {}
@@ -611,5 +612,10 @@ return {
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
   }
+},
+  {
+  'mrcjkb/rustaceanvim',
+  version = '^6', -- Recommended
+  lazy = false, -- This plugin is already lazy
 },
 }

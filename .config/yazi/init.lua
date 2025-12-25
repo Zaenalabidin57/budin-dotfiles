@@ -59,8 +59,8 @@ require("fg"):setup({
 
 -- require("git"):setup()
 require("current-size"):setup({
-    equal_ignore = {"~","/","/home","/run/media/shigure/YEET/*","~/uwe/*"}, -- full path match
-    sub_ignore = {"/run/media/shigure/YEET/*","~/uwe/*"} -- sub path match
+    equal_ignore = {"~","/","/home","/run/media/shigure/yunandari/*","~/uwe/*"}, -- full path match
+    sub_ignore = {"/run/media/shigure/yunandari/*","~/uwe/*"} -- sub path match
 })
 
 require("full-border"):setup()

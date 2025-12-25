@@ -1,7 +1,7 @@
 set -gx PATH $PATH /home/shigure/.cargo/bin /home/shigure/.config/composer/vendor/bin /sbin /usr/sbin
 
 set -gx PROTONPATH /usr/share/steam/compatibilitytools.d/proton-ge-custom/
-#set -gx QSG_RHI_BACKEND vulkan
+set -gx QSG_RHI_BACKEND vulkan
 
 
 set -gx EDITOR nvim
@@ -29,7 +29,7 @@ if status is-interactive
    # alias df 'busybox df -h'
    # alias du 'busybox du -h'
    # alias top 'busybox top'
-   #xset r rate 200 50
+   xset r rate 200 50
 
     # Commands to run in interactive sessions can go here
     #abbr --add neofetch nerdfetch
@@ -79,9 +79,6 @@ function japon
 end
 
 
-function claude
-  /usr/bin/claude
-end
 function bwlist
     bw list items --search $argv | jq --tab
 end
@@ -187,7 +184,8 @@ end
 function fish_greeting
   #fastfetch
   #nerdfetch
-  pfetch
+  #uwufetch
+pfetch-rs
   #neofetch
   #chafa ~/Pictures/artix.png
   #chafa ~/.config/fastfetch/uwaahh.png
@@ -261,40 +259,6 @@ if status is-login
 end
 
 
-if set -q CONTAINER_ID
-  # We are inside a Distrobox container
-  if contains $CONTAINER_ID 'archbtw'
-    function fish_prompt
-      set_color blue
-      echo -n "[ Archbtw] "
-      set_color normal
-      echo -n (prompt_pwd)
-      echo -n "> "
-    end
-  end
-  if contains $CONTAINER_ID 'gamij'
-    function fish_prompt
-      set_color yellow
-      echo -n "[ gamij] "
-      set_color normal
-      echo -n (prompt_pwd)
-      echo -n "> "
-    end
-  else
-    function fish_prompt
-      set_color green
-      echo -n "[ $CONTAINER_ID] "
-      set_color normal
-      echo -n (prompt_pwd)
-      echo -n "> "
-    end
-  end
-end
-
-
-#if status is-login
-#  exec sh -c /home/shigure/.config/scripts/abodindwl/run_dwl.sh
-#end
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
